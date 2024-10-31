@@ -13,7 +13,7 @@
     <nav class="main-nav">
         <div class="container">
             <a href="#" class="logo">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAACUCAMAAADoITZaAAAAb1BMVEXvKy0AKGj///8AG2Lr7fFgZYwADF6CiKT85eXxUlPvGx7zaGrvIiQAJmcAAFotMGyqscL70dH0goPvFhnuAAAAIWX0fX7xXl/2np/72tvT2OCdpblYYIhBTXxkaY4AEmB3f5397e3wRkf1k5TuCAwxEVLlAAABX0lEQVR4nO3a20rDQABF0enFW71rtVZrq7X//436oBATkHCGlG3Z6zVwyCZPGaaUyP3d+Nv0+nL029XNz7PbWba+Z8ZQGUNlDJUxVMZQGUNlDJUxVMZQGUNlDJUxVMZQGUNlDJUxVMZQGUNlDJUxVMZQGUNlDJUxVMZQGUNlDJUxVMZQGUMFjZlF5o+9YubZeqqcRxZPfWKWi2w9VcaV/orZN2OajBmIMU3GDOSwYqaVnrsxL7WbqXJUZ70atT28ritHU2VSq/1hvmqqN0Ol8yr/mDFUxlAZQ2UMlTFUxlAZQ1WOK226m5PazVQ5qfQ2av+dTVa1m6nDOtCoHTBmIMY0GTMQY5pQMaeZ914x4XiqnEW2H31ilttsPVUuIrt+9wB22XoqvAoBvaGRMYbKGCpjqIyhMobKGCpjqIyhMobKGCpjqIyhMobKGCpjqIyhMobKGCpjqIyhMobKGCpjqIyhMobKGCpjqIyhMobKmMF9Akjvp8peZ5vuAAAAAElFTkSuQmCC" alt="Norway Flag" style="height: 50px;">
+                <img src="https://img.freepik.com/premium-vector/norway-flag-with-original-color_967740-4195.jpg?semt=ais_hybrid" alt="Norway Flag" style="height: 50px;">
                 <span>NORWAY TOURISM</span>
             </a>
             <div class="menu-icon">&#9776;</div> <!-- Hamburger icon for mobile -->
@@ -339,37 +339,56 @@
         const prevButton = document.querySelector('.carousel-control.prev');
         const nextButton = document.querySelector('.carousel-control.next');
         let currentItem = 0;
-
+        let lastScrollTop = 0; // Track the last scroll position
+        const navbar = document.querySelector('.main-nav');
+    
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+            // Ensure navbar only reacts to meaningful scrolls
+            if (Math.abs(scrollTop - lastScrollTop) > 5) { // Adjust the threshold as needed
+                if (scrollTop > lastScrollTop) {
+                    // Downscroll
+                    navbar.style.transform = 'translateY(-100%)'; // Hide navbar
+                } else {
+                    // Upscroll
+                    navbar.style.transform = 'translateY(0)'; // Show navbar
+                }
+                lastScrollTop = scrollTop; // Update last scroll position
+            }
+        });
+    
         function showItem(index) {
             carouselItems[currentItem].classList.remove('active');
             carouselItems[index].classList.add('active');
             currentItem = index;
         }
-
+    
         function showNextItem() {
             let nextIndex = (currentItem + 1) % carouselItems.length;
             showItem(nextIndex);
         }
-
+    
         function showPrevItem() {
             let prevIndex = (currentItem - 1 + carouselItems.length) % carouselItems.length;
             showItem(prevIndex);
         }
-
+    
         prevButton.addEventListener('click', showPrevItem);
         nextButton.addEventListener('click', showNextItem);
-
+    
         setInterval(showNextItem, 5000); // Change slide every 5 seconds
-
+    
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-});
     </script>
+    
 </body>
 </html>
