@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Bergen: Popular Activities</title>
+    <style>
+        :root {
+            --bergen-green: #4a7c59;
+            --bergen-blue: #5d8aa8;
+            --bergen-earth: #8b7355;
+            --bergen-light: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bergen-light);
+        }
+
+        header {
+            background: linear-gradient(to right, var(--bergen-green), var(--bergen-blue));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 20px;
+            color: #264653;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--bergen-earth);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .activity-card h2 {
+            padding: 1rem;
+            margin: 0;
+            color: var(--bergen-green);
+        }
+
+        .activity-card p {
+            padding: 0 1rem 1rem;
+        }
+
+        footer {
+            background-color: var(--bergen-earth);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--bergen-blue);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://seeklogo.com/images/B/bergen-norway-logo-4D2F1209B0-seeklogo.com.png" alt="Bergen Explorer Logo">
+                <span>Bergen Explorer</span>
+            </div>
+            <ul>
+                <li><a href="../hero.html">Home</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Explore Bergen: Popular Activities</h1>
+        <p>Discover the best of Norway's scenic city by the fjords</p>
+    </header>
+
+    <main id="activities">
+        <div class="activity-grid">
+            
+            <div class="activity-card">
+                <img src="https://norwayexclusive.com/wp-content/uploads/2017/10/HD_Bergen-Bryggen-Dag-shutterstock_215341468.jpg" alt="Bryggen">
+                <h2>Bryggen</h2>
+                <p>Explore the historic wooden houses of Bergen’s iconic Bryggen wharf, a UNESCO site.</p>
+            </div>
+            <div class="activity-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/56337e1fe4b0292ace766e5e/1537650230582-RS223H1URXQ88KREJSFO/image-asset.jpeg" alt="Mount Fløyen">
+                <h2>Mount Fløyen</h2>
+                <p>Take the Fløibanen funicular for stunning views over Bergen from the top of Mount Fløyen.</p>
+            </div>
+            <div class="activity-card">
+                <img src="https://trolltunga.com/wp-content/uploads/2022/07/fn603bhm-Foto_Sveinung_Klyve-2048x1360-tiny.jpeg" alt="Trolltunga">
+                <h2>Trolltunga</h2>
+                <p>Challenge yourself with a hike to Trolltunga, one of Norway's most famous rock formations.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/visitbergen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/visitbergen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/visitbergen/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2024 Bergen Tourism. All rights reserved.</p>
+    </footer>
+</body>
+</html>
