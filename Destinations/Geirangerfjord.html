@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Geirangerfjord, Norway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .activities {
+            background-color: #2ecc71;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .activities h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .activities ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .activities li {
+            background-color: #27ae60;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .activities li:hover {
+            background-color: #219653;
+        }
+
+        .weather-widget {
+            background-color: #f39c12;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 3rem;
+        }
+
+        .temperature {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Dynamic Component 1: Slideshow */
+        .slideshow {
+            position: relative;
+            height: 400px;
+            margin-bottom: 2rem;
+        }
+
+        .slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slideshow img.active {
+            opacity: 1;
+        }
+
+        /* Dynamic Component 2: Accordion */
+        .accordion {
+            background-color: #3498db;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+        }
+
+        .accordion-header {
+            background-color: #2980b9;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .accordion-content {
+            background-color: #3498db;
+            padding: 1rem;
+            display: none;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Dynamic Component 3: Countdown Timer */
+        .countdown {
+            background-color: #e74c3c;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .countdown h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .countdown-item {
+            background-color: #c0392b;
+            padding: 1rem;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+
+        .countdown-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Geirangerfjord</h1>
+        <p>Experience the beauty of Norway's most famous fjord</p>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <img src="https://images.unsplash.com/photo-1513519107127-1bed33748e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord">
+            <div class="hero-text">
+                <h2>Welcome to Geirangerfjord</h2>
+                <p>A UNESCO World Heritage Site</p>
+            </div>
+        </div>
+
+        <div class="image-gallery">
+            <img src="https://images.unsplash.com/photo-1516572882656-dc5249697fc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Waterfall">
+            <img src="https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Village">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1574&q=80" alt="Geirangerfjord Mountains">
+        </div>
+
+        <div class="activities">
+            <h3>Popular Activities</h3>
+            <ul>
+                <li>Fjord Cruises</li>
+                <li>Hiking</li>
+                <li>Kayaking</li>
+                <li>Sightseeing</li>
+                <li>Photography</li>
+                <li>Fishing</li>
+            </ul>
+        </div>
+
+        <div class="weather-widget">
+            <h3>Current Weather</h3>
+            <div class="weather-info">
+                <div class="weather-icon">☀️ Warm</div>
+                <div class="temperature">12°C</div>
+            </div>
+        </div>
+
+        <!-- Dynamic Component 1: Slideshow -->
+        <div class="slideshow">
+            <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Scenic 1" class="active">
+            <img src="https://images4.alphacoders.com/600/thumb-1920-600539.jpg" alt="Geirangerfjord Scenic 2">
+            <img src="https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Scenic 3">
+        </div>
+
+        <!-- Dynamic Component 2: Accordion -->
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Best Time to Visit</div>
+                <div class="accordion-content">
+                    <p>The best time to visit Geirangerfjord is from June to August when the weather is mild and the days are long. However, this is also the busiest tourist season. For fewer crowds, consider visiting in May or September.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How to Get There</div>
+                <div class="accordion-content">
+                    <p>The nearest airport is Ålesund Airport, Vigra. From there, you can rent a car or take a bus to Geiranger. Alternatively, you can reach Geirangerfjord by ferry from nearby towns like Hellesylt or Ålesund.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Accommodation Options</div>
+                <div class="accordion-content">
+                    <p>Geirangerfjord offers a range of accommodation options, from luxury hotels with fjord views to cozy guesthouses and camping sites. Some popular choices include Hotel Union Geiranger, Grande Fjord Hotel, and Geiranger Camping.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Component 3: Countdown Timer -->
+        <div class="countdown">
+            <h3>Summer Season Starts In</h3>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Discover Geirangerfjord. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dynamic Component 1: Slideshow
+        const slideshowImages = document.querySelectorAll('.slideshow img');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slideshowImages[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slideshowImages.length;
+            slideshowImages[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Dynamic Component 2: Accordion
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Dynamic Component 3: Countdown Timer
+        const countdownDate = new Date('June 1, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    
+    </script>
+</body>
+</html>

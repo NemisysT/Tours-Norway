@@ -6,6 +6,8 @@
     <title>Discover Norway</title>
     <link rel="stylesheet" href="hero.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     
 </head>
 <body>
@@ -28,12 +30,7 @@
         </div>
     </nav>
     
-    
-    
-    
-    
-
-    <header id="home" class="hero">
+       <header id="home" class="hero">
         <div class="hero-content">
             <h1>Discover Norway</h1>
             <p>Explore the Land of Fjords and Northern Lights</p>
@@ -42,65 +39,12 @@
     </header>
 
     <main>
-        <section id="destinations" class="carousel-section">
+        <section id="destinations" class="map-section">
             <h2 class="section-title">Top Destinations in Norway</h2>
-            <div class="carousel">
-                <div class="carousel-item active" style="background-image: url('https://images.alphacoders.com/598/thumb-1920-598524.jpg');">
-                    <div class="carousel-text">
-                        <h3>Geirangerfjord</h3>
-                        <p>UNESCO World Heritage Site</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://images.pexels.com/photos/1933316/pexels-photo-1933316.jpeg');">
-                    <div class="carousel-text">
-                        <h3>Northern Lights</h3>
-                        <p>Experience the Aurora Borealis</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://images2.alphacoders.com/885/885961.jpg');">
-                    <div class="carousel-text">
-                        <h3>Lofoten Islands</h3>
-                        <p>Picturesque fishing villages</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/22/16/oslo.jpg');">
-                    <div class="carousel-text">
-                        <h3>Oslo</h3>
-                        <p>Norway’s vibrant capital</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://cdn.sanity.io/images/4aans0in/production/d9deeef72a6b06a652dea13139455f9328332c97-3000x1539.jpg?rect=0,0,2736,1539&w=3840&h=2160&fm=webp&q=100&fit=max&auto=format');">
-                    <div class="carousel-text">
-                        <h3>Bergen</h3>
-                        <p>Gateway to the fjords</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://wallpapers.com/images/hd/tromso-norway-winter-night-e1veya9wx61qiq7b.jpg');">
-                    <div class="carousel-text">
-                        <h3>Tromsø</h3>
-                        <p>Arctic adventures and Northern Lights</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://images4.alphacoders.com/101/thumb-1920-101908.jpg');">
-                    <div class="carousel-text">
-                        <h3>Preikestolen</h3>
-                        <p>Pulpit Rock hiking experience</p>
-                    </div>
-                </div>
-                <div class="carousel-item" style="background-image: url('https://www.wallpaperflare.com/static/376/403/771/landscape-%C3%85lesund-beige-concrete-wallpaper.jpg');">
-                    <div class="carousel-text">
-                        <h3>Ålesund</h3>
-                        <p>Art Nouveau architecture and stunning views</p>
-                    </div>
-                </div>
-                <button class="carousel-control prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-control next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-            </div>
+            <!-- Map Container -->
+            <div id="map" style="height: 600px; width: 100%;"></div>
         </section>
-        
-        
-        
-
+              
         <section id="activities" class="highlights">
             <h2 class="section-title">Popular Activities</h2>
             <style>
@@ -217,7 +161,7 @@
                     <div class="card-content">
                         <h3>Oslo</h3>
                         <p>Explore Norway's vibrant capital</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Oslo.html" class="card-button">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -225,7 +169,7 @@
                     <div class="card-content">
                         <h3>Bergen</h3>
                         <p>Gateway to the fjords</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Bergen.html" class="card-button">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -233,7 +177,7 @@
                     <div class="card-content">
                         <h3>Tromsø</h3>
                         <p>Arctic adventures and Northern Lights</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Tromsø.html" class="card-button">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -241,7 +185,7 @@
                     <div class="card-content">
                         <h3>Fjord Hiking</h3>
                         <p>Experience breathtaking trails</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Fjord Hiking.html" class="card-button">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -249,7 +193,7 @@
                     <div class="card-content">
                         <h3>Midnight Sun</h3>
                         <p>Experience the phenomenon in summer</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Midnight Sun.html" class="card-button">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -257,7 +201,7 @@
                     <div class="card-content">
                         <h3>Whale Watching</h3>
                         <p>Get up close with magnificent creatures</p>
-                        <a href="#" class="card-button">Learn More</a>
+                        <a href="./Activities/Whale Watching.html" class="card-button">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -270,26 +214,31 @@
                     <img src="https://miro.medium.com/v2/resize:fit:1400/0*3hvDUVbLWrPxve-B.jpg" alt="Kjøttkaker" />
                     <h3>Kjøttkaker</h3>
                     <p>Traditional Norwegian meatballs served with potatoes and gravy.</p>
+                    <a href="./Cuisine/Kjøttkaker.html" class="cta-button">Discover</a>
                 </div>
                 <div class="cuisine-item">
                     <img src="https://www.dybvik.no/wp-content/uploads/2023/12/lutefisk_m_sennepsaus.jpeg" alt="Lutefisk" />
                     <h3>Lutefisk</h3>
                     <p>Dried fish that has been soaked in a lye solution and served with potatoes.</p>
+                    <a href="./Cuisine/Lutefisk.html" class="cta-button">Discover</a>
                 </div>
                 <div class="cuisine-item">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgk4Dy1r1Zgq8i41H_NpbqbYRBgNS1o0g1wg&s" alt="Fårikål" />
                     <h3>Fårikål</h3>
                     <p>A hearty stew made with mutton and cabbage, considered Norway's national dish.</p>
+                    <a href="./Cuisine/Fårikål.html" class="cta-button">Discover</a>
                 </div>
                 <div class="cuisine-item">
                     <img src="https://sailingselkie.no/wp-content/uploads/2022/11/DSC05015.jpg" alt="Smalahove" />
                     <h3>Smalahove</h3>
                     <p>Smoked sheep's head, traditionally eaten before Christmas.</p>
+                    <a href="./Cuisine/Smalahove.html" class="cta-button">Discover</a>
                 </div>
                 <div class="cuisine-item">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBNNY8TuLfkg1FsqktR9LDpElVTsHxbXUi-w&s" alt="Gravlaks" />
                     <h3>Gravlaks</h3>
                     <p>Cured salmon with a mixture of sugar, salt, and dill.</p>
+                    <a href="./Cuisine/Gravlaks.html" class="cta-button">Discover</a>
                 </div>
             </div>
         </section>
@@ -328,57 +277,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Norway Tourism. All rights reserved.</p>
+                <p>&copy; 2024 Norway Tourism. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
 
     <script>
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const prevButton = document.querySelector('.carousel-control.prev');
-        const nextButton = document.querySelector('.carousel-control.next');
-        let currentItem = 0;
-        let lastScrollTop = 0; // Track the last scroll position
-        const navbar = document.querySelector('.main-nav');
-    
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-            // Ensure navbar only reacts to meaningful scrolls
-            if (Math.abs(scrollTop - lastScrollTop) > 5) { // Adjust the threshold as needed
-                if (scrollTop > lastScrollTop) {
-                    // Downscroll
-                    navbar.style.transform = 'translateY(-100%)'; // Hide navbar
-                } else {
-                    // Upscroll
-                    navbar.style.transform = 'translateY(0)'; // Show navbar
-                }
-                lastScrollTop = scrollTop; // Update last scroll position
-            }
-        });
-    
-        function showItem(index) {
-            carouselItems[currentItem].classList.remove('active');
-            carouselItems[index].classList.add('active');
-            currentItem = index;
-        }
-    
-        function showNextItem() {
-            let nextIndex = (currentItem + 1) % carouselItems.length;
-            showItem(nextIndex);
-        }
-    
-        function showPrevItem() {
-            let prevIndex = (currentItem - 1 + carouselItems.length) % carouselItems.length;
-            showItem(prevIndex);
-        }
-    
-        prevButton.addEventListener('click', showPrevItem);
-        nextButton.addEventListener('click', showNextItem);
-    
-        setInterval(showNextItem, 5000); // Change slide every 5 seconds
-    
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -387,6 +292,44 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Navbar scroll-hide functionality
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.main-nav');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (Math.abs(scrollTop - lastScrollTop) > 5) {
+                navbar.style.transform = scrollTop > lastScrollTop ? 'translateY(-100%)' : 'translateY(0)';
+                lastScrollTop = scrollTop;
+            }
+        });
+
+        // Leaflet Map Initialization
+        const map = L.map('map').setView([64.9631, 10.3536], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Array of Destinations
+        const destinations = [
+    { name: "Geirangerfjord", description: "UNESCO World Heritage Site", url: "./Destinations/Geirangerfjord.html", coords: [62.1049, 7.0807] },
+    { name: "Northern Lights", description: "Experience the Aurora Borealis", url: "./Destinations/NorthernLights.html", coords: [69.6492, 18.9553] },
+    { name: "Trolltunga", description: "Stunning cliff rock formation", url: "./Destinations/Trolltunga.html", coords: [60.1240, 6.7382] },
+    { name: "Lofoten Islands", description: "Arctic Circle landscapes", url: "./Destinations/Lofoten.html", coords: [68.2554, 13.6325] },
+    { name: "Oslo", description: "The vibrant capital of Norway", url: "./Destinations/Oslo.html", coords: [59.9139, 10.7522] },
+    { name: "Bergen", description: "Gateway to the fjords", url: "./Destinations/Bergen.html", coords: [60.39299, 5.32415] },
+    { name: "Tromsø", description: "Arctic adventures and Northern Lights", url: "./Destinations/Tromsø.html", coords: [69.6496, 18.956], },
+    { name: "Preikestolen", description: "Famous cliff overlooking Lysefjorden", url: "./Destinations/Preikestolen.html", coords: [58.9833, 6.1861] },
+    { name: "Ålesund", description: "Art Nouveau architecture and stunning views", url: "./Destinations/Ålesund.html", coords: [62.4724, 6.1550] }
+];
+
+
+        // Adding Markers for each Destination
+        destinations.forEach(dest => {
+            const marker = L.marker(dest.coords).addTo(map);
+            marker.bindPopup(`<b>${dest.name}</b><br>${dest.description}<br><a href="${dest.url}" target="_blank">Learn More</a>`);
         });
     </script>
     
