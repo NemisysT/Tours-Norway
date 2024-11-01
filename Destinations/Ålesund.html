@@ -272,33 +272,62 @@
     </footer>
 
     <script>
-        // JavaScript for weather widget
         async function fetchWeather() {
-            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=alesund,no&appid=YOUR_API_KEY&units=metric');
-            const data = await response.json();
-
-            // Update weather widget with data
-            document.getElementById('temperature').textContent = Math.round(data.main.temp) + '°C';
-            document.getElementById('humidity').textContent = data.main.humidity + '% Humidity';
-            document.getElementById('wind').textContent = Math.round(data.wind.speed) + ' km/h Wind';
-            document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(data.main.feels_like) + '°C';
-            document.getElementById('location').textContent = data.name + ', ' + data.sys.country;
-
-            // Weather icons based on weather conditions
-            const weatherCondition = data.weather[0].main;
-            const weatherIcons = {
-                'Clear': '☀️',
-                'Clouds': '☁️',
-                'Rain': '🌧️',
-                'Drizzle': '🌦️',
-                'Thunderstorm': '⛈️',
-                'Snow': '❄️',
-                'Mist': '🌫️'
-            };
-            document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            try {
+                // Step 1: Fetch latitude and longitude for Ålesund
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Ålesund,,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
         }
-
+    
         fetchWeather();
     </script>
+    
+    
+    
 </body>
 </html>

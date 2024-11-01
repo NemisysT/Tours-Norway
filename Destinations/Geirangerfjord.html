@@ -278,112 +278,88 @@
         <div class="weather-widget">
             <h3>Current Weather</h3>
             <div class="weather-info">
-                <div class="weather-icon">☀️ Warm</div>
-                <div class="temperature">12°C</div>
+                <div class="weather-main">
+                    <div class="weather-icon" id="weatherIcon">🌤️</div>
+                    <div class="temperature" id="temperature">15°C</div>
+                </div>
+                <div class="weather-details">
+                    <div class="weather-detail">
+                        <span class="weather-detail-icon">💧</span>
+                        <span class="weather-detail-text" id="humidity">60% Humidity</span>
+                    </div>
+                    <div class="weather-detail">
+                        <span class="weather-detail-icon">💨</span>
+                        <span class="weather-detail-text" id="wind">10 km/h Wind</span>
+                    </div>
+                    <div class="weather-detail">
+                        <span class="weather-detail-icon">🌡️</span>
+                        <span class="weather-detail-text" id="feelsLike">Feels like 14°C</span>
+                    </div>
+                </div>
             </div>
+            <div class="weather-location" id="location">Geirangerfjord, Norway</div>
         </div>
 
-        <!-- Dynamic Component 1: Slideshow -->
-        <div class="slideshow">
-            <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Scenic 1" class="active">
-            <img src="https://images4.alphacoders.com/600/thumb-1920-600539.jpg" alt="Geirangerfjord Scenic 2">
-            <img src="https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Geirangerfjord Scenic 3">
-        </div>
-
-        <!-- Dynamic Component 2: Accordion -->
-        <div class="accordion">
-            <div class="accordion-item">
-                <div class="accordion-header">Best Time to Visit</div>
-                <div class="accordion-content">
-                    <p>The best time to visit Geirangerfjord is from June to August when the weather is mild and the days are long. However, this is also the busiest tourist season. For fewer crowds, consider visiting in May or September.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header">How to Get There</div>
-                <div class="accordion-content">
-                    <p>The nearest airport is Ålesund Airport, Vigra. From there, you can rent a car or take a bus to Geiranger. Alternatively, you can reach Geirangerfjord by ferry from nearby towns like Hellesylt or Ålesund.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <div class="accordion-header">Accommodation Options</div>
-                <div class="accordion-content">
-                    <p>Geirangerfjord offers a range of accommodation options, from luxury hotels with fjord views to cozy guesthouses and camping sites. Some popular choices include Hotel Union Geiranger, Grande Fjord Hotel, and Geiranger Camping.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dynamic Component 3: Countdown Timer -->
-        <div class="countdown">
-            <h3>Summer Season Starts In</h3>
-            <div class="countdown-timer">
-                <div class="countdown-item">
-                    <div class="countdown-value" id="days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2024 Discover Geirangerfjord. All rights reserved.</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Discover Geirangerfjord. All rights reserved.</p>
-    </footer>
-
     <script>
-        // Dynamic Component 1: Slideshow
-        const slideshowImages = document.querySelectorAll('.slideshow img');
-        let currentSlide = 0;
-
-        function nextSlide() {
-            slideshowImages[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slideshowImages.length;
-            slideshowImages[currentSlide].classList.add('active');
-        }
-
-        setInterval(nextSlide, 5000);
-
-        // Dynamic Component 2: Accordion
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
-        // Dynamic Component 3: Countdown Timer
-        const countdownDate = new Date('June 1, 2025 00:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Geirangerfjord
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Ålesund,,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
     
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
+        }
+    
+        fetchWeather();
     </script>
+    
 </body>
 </html>
