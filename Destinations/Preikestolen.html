@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Preikestolen, Norway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e8f4f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #3e8e41;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 5px solid #a1c49c;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .highlights {
+            background-color: #4caf50;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .highlights h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .highlights li {
+            background-color: #66bb6a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .highlights li:hover {
+            background-color: #81c784;
+        }
+
+        .weather-widget {
+            background: linear-gradient(135deg, #ffecb3, #fff176);
+            color: #333;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-right: 1rem;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-detail-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .weather-detail-text {
+            font-size: 1rem;
+        }
+
+        .weather-location {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #3e8e41;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore Preikestolen, Norway</h1>
+        <p>The Iconic Pulpit Rock Awaits</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="https://res.cloudinary.com/gofjords-com/images/w_2560,h_1707,c_scale/f_auto,q_auto:eco/v1698841353/Experiences/GoFjords/Hiking/Preikestolen%20Express/Preikestolen-sunrise-Lysefjorden-cloudy-sky/Preikestolen-sunrise-Lysefjorden-cloudy-sky.jpg?_i=AA" alt="Preikestolen view">
+                <div class="hero-text">
+                    <h2>Welcome to Preikestolen</h2>
+                    <p>A Stunning Natural Wonder</p>
+                </div>
+            </div>
+
+            <h3>Image Gallery</h3>
+            <br>
+            <div class="image-gallery">
+                <img src="https://www.campervannorway.com/assets/img/blog/395/shutterstock_1452387362-compressed.jpg" alt="Hiking trail to Preikestolen">
+                <img src="https://img0.oastatic.com/img2/56037121/600x300c/variant.jpg" alt="Preikestolen rock">
+                <img src="https://i0.wp.com/bilivoka.com/wp-content/uploads/2017/05/IMG_2180.jpg?fit=750%2C501&ssl=1" alt="Sunset at Preikestolen">
+            </div>
+
+            <div class="highlights">
+                <h3>Top Highlights</h3>
+                <ul>
+                    <li>Stunning Views from the Top</li>
+                    <li>Iconic Hiking Trails</li>
+                    <li>Best Time to Visit: Late Spring to Early Fall</li>
+                    <li>Guided Tours Available</li>
+                    <li>Nearby Attractions: Lysefjord</li>
+                </ul>
+            </div>
+
+            <div class="weather-widget">
+                <h3>Current Weather</h3>
+                <div class="weather-info">
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weatherIcon">🌤️</div>
+                        <div class="temperature" id="temperature">7°C</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💧</span>
+                            <span class="weather-detail-text" id="humidity">70% Humidity</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💨</span>
+                            <span class="weather-detail-text" id="wind">5 km/h Wind</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">🌡️</span>
+                            <span class="weather-detail-text" id="feelsLike">Feels like 4°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-location" id="location">Preikestolen, Norway</div>
+            </div>
+
+            <!-- Dynamic Component 1: Adventure Activities -->
+            <div class="adventure-activities">
+                <h2>Thrilling Activities Around Preikestolen</h2>
+                <p>Preikestolen isn't just about the stunning views; it offers an array of thrilling activities that allow you to explore the beautiful Lysefjord and its surrounding nature. Here are some top activities to consider:</p>
+                
+                <div class="activity">
+                    <h3>Kayaking in the Lysefjord</h3>
+                    <p>Experience the serenity of the fjord while paddling through crystal-clear waters. Kayaking offers a unique perspective of the towering cliffs and lush scenery. Guided tours are available, catering to all skill levels, and often include stops for photos and local wildlife spotting.</p>
+                    <img src="https://lysefjorden.com/wp-content/uploads/2018/04/4-lysefjorden-slutten.jpg" alt="Kayaking in Lysefjord" style="width:100%; border-radius: 10px;">
+                </div>
+                
+                <div class="activity">
+                    <h3>Rock Climbing Adventures</h3>
+                    <p>For the adrenaline seekers, rock climbing near Preikestolen is a must. Various routes cater to different experience levels, from beginners to seasoned climbers. Professional guides ensure safety while providing equipment and instruction. The views from the top are simply breathtaking!</p>
+                    <img src="https://ppnblog.b-cdn.net/wp-content/uploads/2024/01/PXL_20230602_155232469-1200x904.webp" alt="Rock climbing near Preikestolen" style="width:100%; border-radius: 10px;">
+                </div>
+                
+                <div class="activity">
+                    <h3>Guided Hiking Tours</h3>
+                    <p>Join a guided hiking tour to make the most of your trek to Preikestolen. Knowledgeable guides will share fascinating insights about the area's geology, flora, and fauna, enhancing your experience. This is an excellent way to meet fellow adventurers and ensure a safe journey to the summit.</p>
+                    <img src="https://www.nps.gov/glac/planyourvisit/images/guidedhiking.jpg" alt="Guided Hiking Tours" style="width:100%; border-radius: 10px;">
+                </div>
+            </div>
+            
+
+            <!-- Dynamic Component 2: Hiking Information Section -->
+            <div class="hiking-info">
+                <h2>Hiking Tips</h2>
+                <p>Prepare adequately with water, snacks, and proper gear. The hike can take 4-5 hours round trip.</p>
+                <img src="https://unusualtraveler.com/wp-content/uploads/2020/05/2020-05-12-16.36.36.jpg" alt="Hiking path at Preikestolen" style="width:100%; border-radius: 10px;">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Preikestolen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Oslo
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Stavanger&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
+        }
+    
+        fetchWeather();
+    </script>
+</body>
+</html>
