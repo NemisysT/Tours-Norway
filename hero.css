@@ -502,9 +502,11 @@ body {
 
 .culture-item img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* This will crop the image while maintaining its aspect ratio */
+    border-radius: 10px; /* Keep the rounded corners */
 }
+
 
 .culture-item h3 {
     font-size: 1.5rem;
