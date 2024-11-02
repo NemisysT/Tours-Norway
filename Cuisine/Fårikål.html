@@ -3,10 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norway Cuisine</title>
+    <title>Kjøttkaker: Norwegian Meatballs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #c41e3a;
+            --secondary-color: #00205b;
+            --accent-color: #f1c40f;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content, .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .recipe {
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .recipe h2 {
+            color: var(--secondary-color);
+        }
+
+        .recipe ul, .recipe ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .cultural-significance, .where-to-try, .reviews {
+            margin-bottom: 2rem;
+        }
+
+        .star-rating {
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+
+        .cta {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .cta button {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #d4ac0d;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum temporibus ea consequatur vero laudantium adipisci ut nihil, maxime laboriosam distinctio iure pariatur dolores nemo nisi, voluptates nulla? Quo commodi voluptatum est debitis incidunt quam dignissimos suscipit error consectetur amet fugit illum libero odit beatae alias, labore sint omnis adipisci aspernatur aliquid nobis rerum animi nulla? Odio reprehenderit saepe mollitia nulla explicabo ducimus modi vel maxime perferendis rem, ea ipsam voluptas provident voluptates vero aperiam distinctio reiciendis dicta nobis quod. Amet dignissimos, consequatur aspernatur dicta perferendis repellendus reprehenderit assumenda sint sunt eligendi, cumque rem, possimus quod voluptates quasi officia eaque officiis.</p>
-    
+    <header>
+        <h1>Kjøttkaker: Norwegian Meatballs</h1>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <main class="main-content">
+                <section class="image-gallery">
+                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" alt="Kjøttkaker served with mashed potatoes and lingonberry jam">
+                    <img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kjøttkaker being prepared">
+                    <img src="https://images.unsplash.com/photo-1600803907087-f56d462fd26b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Close-up of Kjøttkaker">
+                </section>
+
+                <section class="recipe">
+                    <h2>Simplified Recipe</h2>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>500g mixed ground beef and pork</li>
+                        <li>1 egg</li>
+                        <li>1/2 cup breadcrumbs</li>
+                        <li>1/2 cup milk</li>
+                        <li>1 small onion, finely chopped</li>
+                        <li>Salt, pepper, nutmeg, and ginger to taste</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Mix all ingredients in a bowl.</li>
+                        <li>Shape into oval meatballs.</li>
+                        <li>Fry in a pan until browned and cooked through.</li>
+                        <li>Serve with gravy, mashed potatoes, and lingonberry jam.</li>
+                    </ol>
+                    <p><strong>Cooking Time:</strong> 20 minutes</p>
+                </section>
+
+                <section class="cultural-significance">
+                    <h2>Cultural Significance</h2>
+                    <p>Kjøttkaker is a beloved staple in Norwegian cuisine, often served during holidays and special occasions. It represents comfort food and family traditions for many Norwegians.</p>
+                </section>
+
+                <section class="where-to-try">
+                    <h2>Where to Try</h2>
+                    <ul>
+                        <li>Kaffistova, Oslo</li>
+                        <li>Gamle Raadhus Restaurant, Oslo</li>
+                        <li>Dovrehallen, Bergen</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <section class="reviews">
+                    <h2>User Reviews</h2>
+                    <div class="review">
+                        <p>"The best comfort food!" - Maria S.</p>
+                        <div class="star-rating">★★★★★</div>
+                    </div>
+                    <div class="review">
+                        <p>"Authentic taste of Norway." - John D.</p>
+                        <div class="star-rating">★★★★☆</div>
+                    </div>
+                </section>
+
+                <section class="related-dishes">
+                    <h2>Related Dishes</h2>
+                    <ul>
+                        <li>Fiskeboller (Fish Balls)</li>
+                        <li>Karbonader (Pan-fried Beef Patties)</li>
+                        <li>Medisterkaker (Pork Meatballs)</li>
+                    </ul>
+                </section>
+
+                <section class="cooking-tips">
+                    <h2>Cooking Tips</h2>
+                    <ul>
+                        <li>Soak breadcrumbs in milk for tender meatballs.</li>
+                        <li>Don't overwork the meat mixture.</li>
+                        <li>Serve with lingonberry jam for authenticity.</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <section class="cta">
+            <h2>Experience Norwegian Cuisine</h2>
+            <p>Want to taste authentic Kjøttkaker and other Norwegian delicacies?</p>
+            <button>Book a Culinary Tour</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Norwegian Cuisine Explorer. All rights reserved.</p>
+        <p>Contact: info@norwegiancuisine.com</p>
+    </footer>
+
+    <script>
+        document.querySelector('.cta button').addEventListener('click', function() {
+            alert('Booking functionality would be implemented here.');
+        });
+
+        const stars = document.querySelectorAll('.star-rating');
+        stars.forEach(starRating => {
+            starRating.addEventListener('click', function() {
+                const rating = prompt('Rate this dish from 1 to 5 stars:');
+                if (rating && rating >= 1 && rating <= 5) {
+                    this.textContent = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
