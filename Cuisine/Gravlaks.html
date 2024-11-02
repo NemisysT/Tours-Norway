@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravlaks: A Nordic Delicacy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #2a4f9d; /* Fresh ocean teal */
+            --secondary-color: #3c2653; /* Deep coastal blue */
+            --accent-color: #e99f6a; /* Warm, subtle yellow */
+            --background-color: #f4f4f9; /* Light, fresh white */
+            --text-color: #333333; /* Dark for readability */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content, .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .recipe {
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .recipe h2 {
+            color: var(--secondary-color);
+        }
+
+        .recipe ul, .recipe ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .cultural-significance, .where-to-try, .reviews {
+            margin-bottom: 2rem;
+        }
+
+        .star-rating {
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+
+        .cta {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .cta button {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #d3a753;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .emoji-rating {
+            display: flex;
+            gap: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .emoji {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .emoji:hover,
+        .emoji.active {
+            transform: scale(1.3);
+            color: #e9c46a;
+        }
+
+        .emoji.dulled {
+            opacity: 0.4;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gravlaks: A Nordic Delicacy</h1>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <main class="main-content">
+                <section class="image-gallery">
+                    <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2006/9/12/0/ig0706_gravlax.jpg.rend.hgtvcom.1280.960.suffix/1371584147718.webp" alt="Gravlaks served with dill and mustard sauce">
+                    <img src="https://petersfoodadventures.com/wp-content/uploads/2018/03/salmon-appetizers-1024x768.jpg" alt="Close-up of thinly sliced Gravlaks on rye bread">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5e2755963c421657bd408970/bcbb723d-c121-4f3f-8afb-41e02324a6fd/PB070117.jpg" alt="Gravlaks preparation process with herbs">
+                </section>
+
+                <section class="recipe">
+                    <h2>Simple Gravlaks Recipe</h2>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 kg fresh salmon fillet, skin-on</li>
+                        <li>3 tbsp sea salt</li>
+                        <li>3 tbsp sugar</li>
+                        <li>1 tbsp black pepper, crushed</li>
+                        <li>1 bunch fresh dill</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Mix salt, sugar, and pepper in a bowl.</li>
+                        <li>Rub the mixture over the salmon and layer with dill.</li>
+                        <li>Place in a dish, cover with plastic wrap, and refrigerate for 2-3 days, turning occasionally.</li>
+                        <li>Slice thinly and serve with mustard sauce or on rye bread.</li>
+                    </ol>
+                    <p><strong>Preparation Time:</strong> 2-3 days (curing)</p>
+                </section>
+
+                <section class="cultural-significance">
+                    <h2>Cultural Significance</h2>
+                    <p>Gravlaks has been a part of Nordic culinary history for centuries, traditionally used to preserve fish. Today, it’s a celebrated appetizer that showcases simple, fresh ingredients.</p>
+                </section>
+
+                <section class="where-to-try">
+                    <h2>Where to Try</h2>
+                    <ul>
+                        <li>Fiskeriet, Oslo</li>
+                        <li>Restaurant Lyst, Oslo</li>
+                        <li>Bare Vestland, Bergen</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <section class="reviews">
+                    <h2>User Opinion</h2>
+                    <div class="review">
+                        <p>Share your thoughts on Gravlaks!</p>
+                        <div class="emoji-rating">
+                            <span class="emoji" data-rating="1">😡</span>
+                            <span class="emoji" data-rating="2">😟</span>
+                            <span class="emoji" data-rating="3">😐</span>
+                            <span class="emoji" data-rating="4">😊</span>
+                            <span class="emoji" data-rating="5">😍</span>
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Scandinavian Bites</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ratingContainer = document.querySelector('.emoji-rating');
+            const feedback = document.querySelector('.feedback');
+            ratingContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('emoji')) {
+                    const selectedRating = parseInt(event.target.getAttribute('data-rating'));
+                    feedback.textContent = ['Very bad', 'Bad', 'Okay', 'Good', 'Excellent'][selectedRating - 1];
+
+                    ratingContainer.querySelectorAll('.emoji').forEach((emoji) => {
+                        emoji.classList.remove('active', 'dulled');
+                        emoji.classList.toggle('active', parseInt(emoji.getAttribute('data-rating')) === selectedRating);
+                        emoji.classList.add('dulled', parseInt(emoji.getAttribute('data-rating')) !== selectedRating);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

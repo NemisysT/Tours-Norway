@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kjøttkaker: Norwegian Meatballs</title>
+    <title>Fårikål: Norway’s National Dish</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         :root {
-            --primary-color: #c41e3a;
-            --secondary-color: #00205b;
-            --accent-color: #f1c40f;
-            --background-color: #f4f4f4;
-            --text-color: #333;
+            --primary-color: #6b4f4f; /* Warm, earthy brown */
+            --secondary-color: #8b7051; /* A soft, rustic beige */
+            --accent-color: #d9b382; /* Golden wheat tone */
+            --background-color: #f7f3e9; /* Light cream background */
+            --text-color: #3d3d3d; /* Darker text for readability */
         }
 
         * {
@@ -86,7 +86,7 @@
         }
 
         .recipe h2 {
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         .recipe ul, .recipe ol {
@@ -114,7 +114,7 @@
 
         .cta button {
             background-color: var(--accent-color);
-            color: var(--secondary-color);
+            color: var(--primary-color);
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -125,11 +125,11 @@
         }
 
         .cta button:hover {
-            background-color: #d4ac0d;
+            background-color: #c4a379;
         }
 
         footer {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 1rem;
@@ -145,115 +145,120 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .emoji-rating {
+            display: flex;
+            gap: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .emoji {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .emoji:hover,
+        .emoji.active {
+            transform: scale(1.3);
+            color: #d9b382;
+        }
+
+        .emoji.dulled {
+            opacity: 0.4;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Kjøttkaker: Norwegian Meatballs</h1>
+        <h1>Fårikål: Norway’s National Dish</h1>
     </header>
 
     <div class="container">
         <div class="content-wrapper">
             <main class="main-content">
                 <section class="image-gallery">
-                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" alt="Kjøttkaker served with mashed potatoes and lingonberry jam">
-                    <img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kjøttkaker being prepared">
-                    <img src="https://images.unsplash.com/photo-1600803907087-f56d462fd26b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Close-up of Kjøttkaker">
+                    <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img,w_1200,h_800/https://workingwithnorwegians.com/wp-content/uploads/far_i_kal_16x9_crop-1200x800.jpeg" alt="Fårikål served in a rustic pot">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJLkcJMhS4PiYC3vb7wyATs30Y1CtAcS2SqQ&s" alt="Close-up of tender lamb and cabbage in broth">
+                    <img src="https://northwildkitchen.com/wp-content/uploads/2016/09/P1010218.jpg" alt="Fårikål cooking process">
                 </section>
 
                 <section class="recipe">
-                    <h2>Simplified Recipe</h2>
+                    <h2>Simple Fårikål Recipe</h2>
                     <h3>Ingredients:</h3>
                     <ul>
-                        <li>500g mixed ground beef and pork</li>
-                        <li>1 egg</li>
-                        <li>1/2 cup breadcrumbs</li>
-                        <li>1/2 cup milk</li>
-                        <li>1 small onion, finely chopped</li>
-                        <li>Salt, pepper, nutmeg, and ginger to taste</li>
+                        <li>1 kg lamb, cut into chunks</li>
+                        <li>1 kg cabbage, sliced into wedges</li>
+                        <li>1 tbsp black peppercorns</li>
+                        <li>Salt to taste</li>
+                        <li>Water to cover</li>
                     </ul>
                     <h3>Instructions:</h3>
                     <ol>
-                        <li>Mix all ingredients in a bowl.</li>
-                        <li>Shape into oval meatballs.</li>
-                        <li>Fry in a pan until browned and cooked through.</li>
-                        <li>Serve with gravy, mashed potatoes, and lingonberry jam.</li>
+                        <li>Layer lamb and cabbage alternately in a pot, sprinkling salt and pepper between each layer.</li>
+                        <li>Add enough water to cover the ingredients.</li>
+                        <li>Simmer gently for about 2 hours until meat is tender.</li>
+                        <li>Serve hot with boiled potatoes.</li>
                     </ol>
-                    <p><strong>Cooking Time:</strong> 20 minutes</p>
+                    <p><strong>Cooking Time:</strong> 2-3 hours</p>
                 </section>
 
                 <section class="cultural-significance">
                     <h2>Cultural Significance</h2>
-                    <p>Kjøttkaker is a beloved staple in Norwegian cuisine, often served during holidays and special occasions. It represents comfort food and family traditions for many Norwegians.</p>
+                    <p>Fårikål is deeply rooted in Norwegian heritage, often enjoyed during the autumn season. It’s a dish that brings families together, symbolizing warmth and tradition.</p>
                 </section>
 
                 <section class="where-to-try">
                     <h2>Where to Try</h2>
                     <ul>
-                        <li>Kaffistova, Oslo</li>
-                        <li>Gamle Raadhus Restaurant, Oslo</li>
-                        <li>Dovrehallen, Bergen</li>
+                        <li>Den Glade Gris, Oslo</li>
+                        <li>Restaurant Fjord, Oslo</li>
+                        <li>Lysverket, Bergen</li>
                     </ul>
                 </section>
             </main>
 
             <aside class="sidebar">
                 <section class="reviews">
-                    <h2>User Reviews</h2>
+                    <h2>User Opinion</h2>
                     <div class="review">
-                        <p>"The best comfort food!" - Maria S.</p>
-                        <div class="star-rating">★★★★★</div>
+                        <p>Share your thoughts on Fårikål!</p>
+                        <div class="emoji-rating">
+                            <span class="emoji" data-rating="1">😡</span>
+                            <span class="emoji" data-rating="2">😟</span>
+                            <span class="emoji" data-rating="3">😐</span>
+                            <span class="emoji" data-rating="4">😊</span>
+                            <span class="emoji" data-rating="5">😍</span>
+                        </div>
+                        <p class="feedback"></p>
                     </div>
-                    <div class="review">
-                        <p>"Authentic taste of Norway." - John D.</p>
-                        <div class="star-rating">★★★★☆</div>
-                    </div>
-                </section>
-
-                <section class="related-dishes">
-                    <h2>Related Dishes</h2>
-                    <ul>
-                        <li>Fiskeboller (Fish Balls)</li>
-                        <li>Karbonader (Pan-fried Beef Patties)</li>
-                        <li>Medisterkaker (Pork Meatballs)</li>
-                    </ul>
-                </section>
-
-                <section class="cooking-tips">
-                    <h2>Cooking Tips</h2>
-                    <ul>
-                        <li>Soak breadcrumbs in milk for tender meatballs.</li>
-                        <li>Don't overwork the meat mixture.</li>
-                        <li>Serve with lingonberry jam for authenticity.</li>
-                    </ul>
                 </section>
             </aside>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dicta! Doloribus, laboriosam odit?</p>
-
-        <section class="cta">
-            <h2>Experience Norwegian Cuisine</h2>
-            <p>Want to taste authentic Kjøttkaker and other Norwegian delicacies?</p>
-            <button>Book a Culinary Tour</button>
-        </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Norwegian Cuisine Explorer. All rights reserved.</p>
-        <p>Contact: info@norwegiancuisine.com</p>
+        <p>&copy; 2024 All Rights Reserved</p>
     </footer>
 
     <script>
-        document.querySelector('.cta button').addEventListener('click', function() {
-            alert('Booking functionality would be implemented here.');
-        });
+        document.querySelectorAll('.emoji-rating').forEach((ratingContainer) => {
+            const feedback = ratingContainer.nextElementSibling;
+            ratingContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('emoji')) {
+                    const selectedRating = parseInt(event.target.getAttribute('data-rating'));
+                    feedback.textContent = ['Very bad', 'Bad', 'Okay', 'Good', 'Excellent'][selectedRating - 1];
 
-        const stars = document.querySelectorAll('.star-rating');
-        stars.forEach(starRating => {
-            starRating.addEventListener('click', function() {
-                const rating = prompt('Rate this dish from 1 to 5 stars:');
-                if (rating && rating >= 1 && rating <= 5) {
-                    this.textContent = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+                    ratingContainer.querySelectorAll('.emoji').forEach((emoji) => {
+                        emoji.classList.remove('active', 'dulled');
+                        emoji.classList.toggle('active', parseInt(emoji.getAttribute('data-rating')) === selectedRating);
+                        emoji.classList.add('dulled', parseInt(emoji.getAttribute('data-rating')) !== selectedRating);
+                    });
                 }
             });
         });

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lutefisk: A Norwegian Delicacy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #2a9d8f; /* Muted teal for a coastal vibe */
+            --secondary-color: #264653; /* Deep ocean blue */
+            --accent-color: #e9c46a; /* Soft sandy yellow */
+            --background-color: #f0f4f8; /* Light sea mist background */
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content, .sidebar {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .recipe {
+            background-color: var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .recipe h2 {
+            color: var(--secondary-color);
+        }
+
+        .recipe ul, .recipe ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .cultural-significance, .where-to-try, .reviews {
+            margin-bottom: 2rem;
+        }
+
+        .star-rating {
+            color: var(--accent-color);
+            font-size: 24px;
+        }
+
+        .cta {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .cta button {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta button:hover {
+            background-color: #d4ac0d;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .emoji-rating {
+            display: flex;
+            gap: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .emoji {
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .emoji:hover,
+        .emoji.active {
+            transform: scale(1.3);
+            color: #e9c46a; /* Highlights selected emoji */
+        }
+
+        .emoji.dulled {
+            opacity: 0.4; /* Reduced opacity for unselected emojis */
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lutefisk: A Norwegian Delicacy</h1>
+    </header>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <main class="main-content">
+                <section class="image-gallery">
+                    <img src="https://northwildkitchen.com/wp-content/uploads/2022/12/P1010066-scaled.jpg" alt="Lutefisk served with boiled potatoes and peas">
+                    <img src="https://scandasia.com/wp-content/uploads/2019/10/https___cdn.evbuc_.com_images_67208689_254419839967_1_original.jpg" alt="Lutefisk preparation">
+                    <img src="https://i0.wp.com/www.thespruceeats.com/thmb/GDLbrdUilJLiBCo3OWnYgMrkprI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1146488093-4b31a36f05c0434dbfc7227a260aa9a0.jpg?ssl=1" alt="Close-up of Lutefisk">
+                </section>
+
+                <section class="recipe">
+                    <h2>Simplified Recipe</h2>
+                    <h3>Ingredients:</h3>
+                    <ul>
+                        <li>1 dried cod, soaked and prepared</li>
+                        <li>1 tbsp butter</li>
+                        <li>Salt, pepper, and nutmeg to taste</li>
+                    </ul>
+                    <h3>Instructions:</h3>
+                    <ol>
+                        <li>Prepare lutefisk as directed by soaking and rehydrating.</li>
+                        <li>Bake or boil the fish until tender.</li>
+                        <li>Serve with boiled potatoes, green peas, and melted butter.</li>
+                    </ol>
+                    <p><strong>Cooking Time:</strong> 40 minutes</p>
+                </section>
+
+                <section class="cultural-significance">
+                    <h2>Cultural Significance</h2>
+                    <p>Lutefisk is a unique dish associated with Nordic winter traditions, especially around the holidays. It’s a food that evokes strong memories for Norwegians and other Scandinavian communities.</p>
+                </section>
+
+                <section class="where-to-try">
+                    <h2>Where to Try</h2>
+                    <ul>
+                        <li>Statholdergaarden, Oslo</li>
+                        <li>Fiskeriet, Oslo</li>
+                        <li>Bare Vestland, Bergen</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <section class="reviews">
+                    <h2>User Opinion</h2>
+                    <div class="review">
+                        <p>Please Leave your valuable feedback!</p>
+                        <div class="emoji-rating">
+                            <span class="emoji" data-rating="1">😡</span>
+                            <span class="emoji" data-rating="2">😟</span>
+                            <span class="emoji" data-rating="3">😐</span>
+                            <span class="emoji" data-rating="4">😊</span>
+                            <span class="emoji" data-rating="5">😍</span>
+                        </div>
+                        <p class="feedback"></p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.emoji-rating').forEach((ratingContainer) => {
+            const feedback = ratingContainer.nextElementSibling;
+
+            ratingContainer.addEventListener('click', (event) => {
+                if (event.target.classList.contains('emoji')) {
+                    const selectedRating = parseInt(event.target.getAttribute('data-rating'));
+
+                    feedback.textContent = ['Very bad', 'Bad', 'Okay', 'Good', 'Excellent'][selectedRating - 1];
+
+                    ratingContainer.querySelectorAll('.emoji').forEach((emoji) => {
+                        emoji.classList.remove('active', 'dulled');
+                        if (parseInt(emoji.getAttribute('data-rating')) === selectedRating) {
+                            emoji.classList.add('active');
+                        } else {
+                            emoji.classList.add('dulled');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
