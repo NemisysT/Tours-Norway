@@ -198,6 +198,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header Section -->
         <header>
             <h1>Discover Lofoten Islands</h1>
             <p>Experience the breathtaking beauty of Norway's Arctic paradise</p>
@@ -205,23 +206,23 @@
 
         <!-- Image Carousel -->
         <div id="carousel">
-            <img src="https://images.unsplash.com/photo-1520769945061-0a448c463865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="carousel-img active" alt="Lofoten Islands Scenic View">
-            <img src="https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="carousel-img" alt="Northern Lights over Lofoten">
-            <img src="https://images.unsplash.com/photo-1598018553943-29ace5bf9867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="carousel-img" alt="Lofoten Islands Fishing Village">
+            <img src="https://images.unsplash.com/photo-1520769945061-0a448c463865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="carousel-img active" alt="Lofoten Islands Scenic View">
+            <img src="https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" class="carousel-img" alt="Northern Lights over Lofoten">
+            <img src="https://images.unsplash.com/photo-1598018553943-29ace5bf9867?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="carousel-img" alt="Lofoten Islands Fishing Village">
             <div class="carousel-caption">Explore the magic of Lofoten</div>
         </div>
 
         <!-- Cards Section -->
         <div class="cards-container">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1421&q=80" alt="Mountain Hiking">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1421&q=80" alt="Mountain Hiking">
                 <div class="card-content">
                     <h3>Mountain Hiking</h3>
                     <p>Explore the stunning mountain trails with spectacular views of fjords and the Arctic Ocean.</p>
                 </div>
             </div>
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Aurora Borealis">
+                <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80" alt="Aurora Borealis">
                 <div class="card-content">
                     <h3>Aurora Borealis</h3>
                     <p>Witness the magical Northern Lights dancing across the sky in one of the best locations in the world.</p>
@@ -238,7 +239,7 @@
 
         <!-- Information Section with Tabs -->
         <div class="info-section">
-            <h2>Discover More About Lofoten</h2>
+            <h2 style="position:relative;">Discover More About Lofoten</h2>
             <div class="info-tabs">
                 <button class="tab-button active" onclick="openTab(event, 'history')">History</button>
                 <button class="tab-button" onclick="openTab(event, 'culture')">Culture</button>
@@ -248,75 +249,40 @@
                 <p>The Lofoten Islands have a rich history dating back to the Viking Age. For centuries, these islands have been the center of great cod fisheries, particularly the production of stockfish. The unique combination of mountains, peaks, and sheltered bays has made Lofoten a vital part of Norway's maritime heritage.</p>
             </div>
             <div id="culture" class="tab-content">
-                <p>Lofoten's culture is deeply rooted in its fishing traditions. The islands are dotted with picturesque fishing villages, each with its own charm. Art galleries, local crafts, and museums showcase the islands' cultural heritage. Don't miss the chance to taste traditional dishes like stockfish or attend local festivals celebrating the midnight sun.</p>
+                <p>Lofoten's culture is deeply rooted in its fishing traditions. The islands are dotted with picturesque fishing villages, each with colorful, red-painted Rorbuer (fishermen's cabins) that reflect a way of life dating back centuries. Art and craftsmanship are also celebrated in Lofoten, with numerous galleries showcasing local talent.</p>
             </div>
             <div id="activities" class="tab-content">
-                <p>Lofoten offers a wide range of activities for all seasons. In addition to hiking, kayaking, and aurora watching, you can enjoy:
-                <ul>
-                    <li>Surfing at Unstad Beach</li>
-                    <li>Fishing trips in the Norwegian Sea</li>
-                    <li>Cycling along scenic coastal roads</li>
-                    <li>Visiting traditional rorbu (fishermen's cabins)</li>
-                    <li>Whale watching tours</li>
-                </ul>
-                </p>
+                <p>Outdoor enthusiasts can explore a variety of activities in Lofoten, including hiking, fishing, surfing, and wildlife spotting. The islands are also known for their remarkable bird colonies, with puffins and sea eagles being popular sightings. During the summer, visitors can experience the midnight sun, while winter brings the magical Northern Lights.</p>
             </div>
         </div>
 
-        <!-- Weather Widget -->
+        <!-- Weather Widget Placeholder -->
         <div id="weather-widget">
             <h2>Current Weather in Lofoten</h2>
-            <p id="weather-info">Loading weather information...</p>
+            <p>Weather data goes here</p>
         </div>
 
+        <!-- Footer Section -->
         <footer>
-            <p>&copy; 2024 Lofoten Islands Discovery. Plan your Arctic adventure today!</p>
+            <p>&copy; 2024 Discover Lofoten Islands. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        // Carousel Functionality
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-img');
-        
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        setInterval(showNextImage, 5000);
-
-        // Tab Functionality
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].classList.remove("active");
+        function openTab(event, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
             }
-
-            const tabButtons = document.getElementsByClassName("tab-button");
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove("active");
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
             }
-
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
         }
-
-        // Simulated Weather Widget
-        function updateWeather() {
-            const weatherConditions = ['Sunny', 'Partly Cloudy', 'Overcast', 'Light Rain', 'Snow'];
-            const temperatures = [-5, 0, 5, 10, 15];
-            
-            const randomCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
-            const randomTemp = temperatures[Math.floor(Math.random() * temperatures.length)];
-            
-            const weatherInfo = `Current conditions: ${randomCondition}, Temperature: ${randomTemp}°C`;
-            document.getElementById('weather-info').textContent = weatherInfo;
-        }
-
-        updateWeather();
-        setInterval(updateWeather, 60000); // Update weather every minute
+        document.getElementById("history").style.display = "block";
     </script>
 </body>
 </html>
