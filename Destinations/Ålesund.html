@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Ålesund, Norway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #00a86b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .activities {
+            background-color: #4682b4;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .activities h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .activities ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .activities li {
+            background-color: #3a6d99;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .activities li:hover {
+            background-color: #2c5277;
+        }
+
+        .weather-widget {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-right: 1rem;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-detail-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .weather-detail-text {
+            font-size: 1rem;
+        }
+
+        .weather-location {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #00a86b;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Ålesund, Norway</h1>
+        <p>The Art Nouveau City by the Sea</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="https://res.cloudinary.com/simpleview/image/upload/v1641558647/clients/norway/NYwoman_at_aksla_viewpoint_alesund_fjord_norway_photo_samuel_taipale_visitnorway_com_e8506cc0_a463_4384_974c_db3bf2bffda2_5f4ee213-afcd-4dd9-a99f-d9a9f1d32655.jpg" alt="Ålesund cityscape">
+                <div class="hero-text">
+                    <h2>Welcome to Ålesund</h2>
+                    <p>A jewel of Norway's western coast</p>
+                </div>
+            </div>
+
+            <div class="image-gallery">
+                <img src="https://images.unsplash.com/photo-1601622256416-d7f757f99eb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" alt="Ålesund harbor">
+                <img src="https://thesevagabondshoes.org/wp-content/uploads/2021/03/alesund_1_sm.jpeg" alt="Ålesund architecture">
+                <img src="https://res.cloudinary.com/simpleview/image/upload/v1640541224/clients/norway/Hj_rundfjorden_Photo_Ha_vard_Myklebust_7dedcafe-2318-4bf4-82b5-f7a4d350cead.jpg" alt="Ålesund fjord view">
+            </div>
+
+            <div class="activities">
+                <h3>Popular Activities</h3>
+                <ul>
+                    <li>Art Nouveau Center Visit</li>
+                    <li>Aksla Viewpoint Hike</li>
+                    <li>Fjord Cruises</li>
+                    <li>Atlantic Sea Park</li>
+                    <li>Sunnmøre Museum</li>
+                    <li>Island Hopping</li>
+                </ul>
+            </div>
+
+            <div class="weather-widget">
+                <h3>Current Weather</h3>
+                <div class="weather-info">
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weatherIcon">🌤️</div>
+                        <div class="temperature" id="temperature">15°C</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💧</span>
+                            <span class="weather-detail-text" id="humidity">60% Humidity</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💨</span>
+                            <span class="weather-detail-text" id="wind">10 km/h Wind</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">🌡️</span>
+                            <span class="weather-detail-text" id="feelsLike">Feels like 14°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-location" id="location">Ålesund, Norway</div>
+            </div>
+
+            <!-- Dynamic Component 1: Art Nouveau Showcase -->
+            <div class="art-nouveau-showcase">
+                <h2>Art Nouveau Architecture</h2>
+                <div class="art-nouveau-gallery">
+                    <div class="art-nouveau-item">
+                        <iframe width="100%" height="750" src="https://www.youtube.com/embed/dvB6QRUZqfg" title="Art Nouveau Architecture Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- End of Dynamic Component 1 -->
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Discover Ålesund. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Ålesund
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Ålesund,,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
+        }
+    
+        fetchWeather();
+    </script>
+    
+    
+    
+</body>
+</html>

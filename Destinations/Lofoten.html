@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Lofoten Islands</title>
+    <style>
+        :root {
+            --primary-color: #00796b;
+            --secondary-color: #004d40;
+            --background-color: #e0f7fa;
+            --text-color: #004d40;
+            --card-bg-color: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        #carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto 40px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-img.active {
+            opacity: 1;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .info-section {
+            background-color: var(--card-bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .info-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .info-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button:hover, .tab-button.active {
+            background-color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        #weather-widget {
+            background-color: var(--card-bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #weather-widget h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .info-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-button {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Discover Lofoten Islands</h1>
+            <p>Experience the breathtaking beauty of Norway's Arctic paradise</p>
+        </header>
+
+        <!-- Image Carousel -->
+        <div id="carousel">
+            <img src="https://images.unsplash.com/photo-1520769945061-0a448c463865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="carousel-img active" alt="Lofoten Islands Scenic View">
+            <img src="https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="carousel-img" alt="Northern Lights over Lofoten">
+            <img src="https://images.unsplash.com/photo-1598018553943-29ace5bf9867?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="carousel-img" alt="Lofoten Islands Fishing Village">
+            <div class="carousel-caption">Explore the magic of Lofoten</div>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="cards-container">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1421&q=80" alt="Mountain Hiking">
+                <div class="card-content">
+                    <h3>Mountain Hiking</h3>
+                    <p>Explore the stunning mountain trails with spectacular views of fjords and the Arctic Ocean.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Aurora Borealis">
+                <div class="card-content">
+                    <h3>Aurora Borealis</h3>
+                    <p>Witness the magical Northern Lights dancing across the sky in one of the best locations in the world.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://nordicventures.com/wp-content/uploads/2019/02/day-tour-02.jpg" alt="Kayaking Adventures">
+                <div class="card-content">
+                    <h3>Kayaking Adventures</h3>
+                    <p>Paddle through the crystal-clear waters and hidden fjords, exploring the coastline's hidden gems.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Section with Tabs -->
+        <div class="info-section">
+            <h2>Discover More About Lofoten</h2>
+            <div class="info-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'history')">History</button>
+                <button class="tab-button" onclick="openTab(event, 'culture')">Culture</button>
+                <button class="tab-button" onclick="openTab(event, 'activities')">Activities</button>
+            </div>
+            <div id="history" class="tab-content active">
+                <p>The Lofoten Islands have a rich history dating back to the Viking Age. For centuries, these islands have been the center of great cod fisheries, particularly the production of stockfish. The unique combination of mountains, peaks, and sheltered bays has made Lofoten a vital part of Norway's maritime heritage.</p>
+            </div>
+            <div id="culture" class="tab-content">
+                <p>Lofoten's culture is deeply rooted in its fishing traditions. The islands are dotted with picturesque fishing villages, each with its own charm. Art galleries, local crafts, and museums showcase the islands' cultural heritage. Don't miss the chance to taste traditional dishes like stockfish or attend local festivals celebrating the midnight sun.</p>
+            </div>
+            <div id="activities" class="tab-content">
+                <p>Lofoten offers a wide range of activities for all seasons. In addition to hiking, kayaking, and aurora watching, you can enjoy:
+                <ul>
+                    <li>Surfing at Unstad Beach</li>
+                    <li>Fishing trips in the Norwegian Sea</li>
+                    <li>Cycling along scenic coastal roads</li>
+                    <li>Visiting traditional rorbu (fishermen's cabins)</li>
+                    <li>Whale watching tours</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <!-- Weather Widget -->
+        <div id="weather-widget">
+            <h2>Current Weather in Lofoten</h2>
+            <p id="weather-info">Loading weather information...</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Lofoten Islands Discovery. Plan your Arctic adventure today!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Carousel Functionality
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel-img');
+        
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 5000);
+
+        // Tab Functionality
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            const tabButtons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Simulated Weather Widget
+        function updateWeather() {
+            const weatherConditions = ['Sunny', 'Partly Cloudy', 'Overcast', 'Light Rain', 'Snow'];
+            const temperatures = [-5, 0, 5, 10, 15];
+            
+            const randomCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+            const randomTemp = temperatures[Math.floor(Math.random() * temperatures.length)];
+            
+            const weatherInfo = `Current conditions: ${randomCondition}, Temperature: ${randomTemp}°C`;
+            document.getElementById('weather-info').textContent = weatherInfo;
+        }
+
+        updateWeather();
+        setInterval(updateWeather, 60000); // Update weather every minute
+    </script>
+</body>
+</html>

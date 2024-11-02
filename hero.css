@@ -1,0 +1,777 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ff6600;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --white: #ffffff;
+}
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    }
+  
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+  
+/* Navigation */
+.main-nav {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for floating effect */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.main-nav.scrolled {
+    background: rgba(0, 0, 0, 0.8); /* Darker on scroll */
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none; /* Remove underline */
+}
+
+.logo img {
+    height: 50px; /* Keep the height consistent */
+    margin-right: 10px; /* Space between logo and text */
+    /* filter: brightness(0) invert(1); White logo for contrast */
+}
+
+.logo span {
+    color: var(--white); /* Text color */
+    font-size: 1.5rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    line-height: 50px; /* Center the text vertically with the logo */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Subtle text shadow for depth */
+}
+
+.logo:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05); /* Slightly grow on hover */
+    transition: transform 0.3s ease; /* Smooth growth effect */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+    position: relative; /* for dropdown arrow */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+    background-color: rgba(255, 102, 0, 0.3); /* Slightly brighter hover effect */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Dropdown styles (if needed) */
+.nav-links .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Hidden by default */
+    z-index: 1001; /* Make sure it's above other content */
+}
+
+.nav-links li:hover .dropdown {
+    display: block; /* Show on hover */
+}
+
+.dropdown li {
+    width: 200px; /* Fixed width for dropdown items */
+}
+
+.dropdown a {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    display: block; /* Takes full width */
+}
+
+.dropdown a:hover {
+    background-color: rgba(0, 51, 102, 0.1);
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links initially on small screens */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the nav bar */
+        left: 0;
+        background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+        width: 100%;
+        transition: max-height 0.3s ease; /* Smooth animation */
+        max-height: 0; /* Start closed */
+        overflow: hidden; /* Hide overflow */
+    }
+
+    .nav-links.open {
+        display: flex; /* Show links when open */
+        max-height: 300px; /* Limit height for transitions */
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon on small screens */
+        cursor: pointer;
+        color: var(--white);
+        font-size: 2rem;
+        position: relative; /* for better stacking */
+    }
+}
+
+.menu-icon {
+    display: none; /* Hidden on larger screens */
+}
+
+
+  
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1520769669658-f07657f5a307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden; /* Prevent overflow for smoother appearance */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darken overlay for better contrast */
+    transition: background 0.5s ease; /* Smooth transition for overlay */
+}
+
+.hero:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
+
+.hero-content {
+    z-index: 1;
+    animation: fadeIn 1s ease; /* Fade-in animation for hero content */
+}
+
+.hero h1 {
+    font-size: 4rem; /* Larger font size for the title */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero p {
+    font-size: 1.6rem; /* Slightly larger font size for description */
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 2rem; /* Increased padding for a more substantial button */
+    text-decoration: none;
+    border-radius: 25px; /* More rounded corners for a modern look */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.cta-button:hover {
+    background-color: #e65c00; /* Change to a warmer color */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+  
+/* Sections */
+.section-title {
+    text-align: center;
+    font-size: 3rem; /* Increased size for a more commanding presence */
+    margin-bottom: 2.5rem; /* More breathing space below */
+    color: var(--primary-color);
+    letter-spacing: 1px; /* Slight spacing for sophistication */
+    text-transform: uppercase; /* Capitalize for a formal touch */
+    position: relative; /* Positioning for the pseudo-element */
+}
+/*Custom Font*/
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* Add an elegant underline effect */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50%; /* Width of the underline */
+    height: 4px; /* Height of the underline */
+    background-color: var(--secondary-color); /* Use a complementary color */
+    margin: 0.5rem auto; /* Center the underline */
+    border-radius: 2px; /* Slight rounding for elegance */
+    transition: width 0.4s ease; /* Smooth transition effect */
+}
+
+/* Add a hover effect to the underline */
+.section-title:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+#AboutNorway{
+    color: #e95d5d;
+}
+
+  
+/* Carousel */
+.carousel-section {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+    text-align: center; /* Center text for a cohesive look */
+}
+
+.carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners for the carousel */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out; /* Smoother transition for opacity */
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    animation: fadeIn 1s ease; /* Fade-in animation for active item */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Reset position */
+    }
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Darker overlay for text */
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for text movement */
+}
+
+.carousel-text h3 {
+    font-size: 1.8rem; /* Slightly larger title for better visibility */
+    margin-bottom: 0.5rem;
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7); /* Lighter background for controls */
+    color: #2c3e50; /* Dark text color for contrast */
+    padding: 1rem;
+    border: none;
+    border-radius: 50%; /* Circular buttons */
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for scale */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.carousel-control:hover {
+    background: rgba(255, 255, 255, 0.9); /* Brighter background on hover */
+    transform: scale(1.1); /* Slightly scale up on hover for emphasis */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+  
+/* Highlights / Activities */
+.highlights {
+    padding: 4rem 0;
+}
+  
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+  
+.card {
+    width: calc(33.333% - 20px);
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.card:hover {
+    transform: translateY(-10px);
+}
+  
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+  
+.card-content {
+    padding: 1.5rem;
+}
+  
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+  
+.card-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+  
+.card-button:hover {
+    background-color: #004080;
+}
+
+/* Cuisine Section */
+.cuisine-section {
+    background-color: var(--background-color);
+    padding: 4rem 0;
+}
+  
+.cuisine-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+  
+.cuisine-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+  
+.cuisine-item {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+  
+.cuisine-item:hover {
+    transform: translateY(-10px);
+}
+  
+.cuisine-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* About Section */
+.about-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-emphasis-color: white;
+}
+  
+.about-section p {
+    font-variant-ligatures: additional-ligatures;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+  
+/* Footer */
+footer {
+    background-color: #555;
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+  
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+  
+.footer-section {
+    width: calc(33.333% - 20px);
+    margin-bottom: 1rem;
+}
+  
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+  
+.social-icons a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+  
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+  
+.newsletter-form input {
+    padding: 0.5rem;
+    width: 70%;
+    border: none;
+    border-radius: 3px 0 0 3px;
+}
+  
+.newsletter-form button {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.newsletter-form button:hover {
+    background-color: #e65c00;
+}
+  
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
+.cuisine-section {
+    background-color: #f8f8f8; /* Light background for contrast */
+    padding: 40px 20px; /* Padding around the section */
+    text-align: center; /* Center text for a clean look */
+}
+
+.section-title {
+    font-size: 2.5em; /* Larger font for the section title */
+    margin-bottom: 30px; /* Space below the title */
+    color: #e60e0e; /* Dark color for contrast */
+}
+
+.cuisine-section {
+    background-color: #f8f8f8; /* Light background for contrast */
+    padding: 60px 20px; /* Padding around the section */
+    text-align: center; /* Center text for a clean look */
+}
+
+.section-title {
+    font-size: 2.5em; /* Larger font for the section title */
+    margin-bottom: 40px; /* Space below the title */
+    color: #f85656; /* Dark color for contrast */
+}
+
+.cuisine-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: center; /* Center items */
+    gap: 30px; /* Space between items */
+}
+
+.cuisine-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: center; /* Center items */
+    gap: 30px; /* Space between items */
+    padding: 20px; /* Add padding around the container */
+}
+
+.cuisine-item {
+    background-color: #ffffff; /* White background for items */
+    border-radius: 12px; /* Slightly rounder corners for a softer look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Prevent overflow of content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transformation */
+    width: 320px; /* Slightly wider for more space */
+    position: relative; /* Position relative for pseudo-elements */
+    animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+    border: 2px solid transparent; /* Add border for focus effect */
+}
+
+.cuisine-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deep shadow on hover */
+    background-color: #f9f9f9; /* Light gray background on hover */
+    border: 2px solid #2980b9; /* Blue border on hover for emphasis */
+}
+
+/* Add a fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cuisine-item img {
+    width: 100%; /* Full width images */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover the area without distortion */
+    border-top-left-radius: 12px; /* Match rounded corners with item */
+    border-top-right-radius: 12px; /* Match rounded corners with item */
+    transition: transform 0.3s ease; /* Smooth image zoom on hover */
+}
+
+.cuisine-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.cuisine-item h3 {
+    font-size: 1.8em; /* Increased font size for titles */
+    margin: 15px 0 10px; /* Space around the title */
+    color: #2980b9; /* Vibrant blue color for titles */
+    text-transform: uppercase; /* Uppercase for titles for added emphasis */
+}
+
+.cuisine-item p {
+    font-size: 1em; /* Font size for descriptions */
+    color: #34495e; /* Darker color for text for better readability */
+    margin-bottom: 15px; /* Space below the description */
+    padding: 0 15px; /* Padding for description */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color transition on hover */
+}
+
+.cuisine-item:hover p {
+    color: #2980b9; /* Vibrant blue color on hover for emphasis */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.highlights {
+    padding: 40px 20px;
+    background-color: rgba(249, 249, 249, 0.9); /* Slightly transparent background */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c2c2c; /* Darker color for better contrast */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+    transition: transform 0.5s, box-shadow 0.3s;
+    perspective: 1000px; /* Added perspective for 3D effect */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* Reduce image opacity for better text visibility */
+    transition: transform 0.5s;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for content */
+    color: #ffffff; /* Bright white text */
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+    border-radius: 12px; /* Rounded corners for content */
+}
+
+.card h3 {
+    font-size: 1.8rem; /* Increased font size for headings */
+    font-weight: bold; /* Make the headings bold */
+    color: #ffcc00; /* Gold color for better visibility */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better contrast */
+    margin-bottom: 10px; /* Add some space below the heading */
+}
+
+.card p {
+    font-size: 1rem; /* Set paragraph size */
+    color: #f0f0f0; /* Light color for descriptions */
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Increased shadow on hover */
+}
+
+.card-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Button background */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.card-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+        max-width: 350px; /* Set a max width for larger screens */
+    }
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 10px);
+    }
+    .cuisine-item {
+        width: 150px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+    .cuisine-item {
+        width: 100%;
+    }
+}

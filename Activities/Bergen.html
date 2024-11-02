@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Bergen: Popular Activities</title>
+    <style>
+        :root {
+            --bergen-blue: #1e3a8a;
+            --bergen-light-blue: #3b82f6;
+            --bergen-earth: #8b7355;
+            --bergen-light: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bergen-light);
+        }
+
+        header {
+            background: linear-gradient(to right, var(--bergen-blue), var(--bergen-light-blue));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--bergen-light);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .activity-card h2 {
+            padding: 1rem;
+            margin: 0;
+            color: var(--bergen-blue);
+        }
+
+        .activity-card p {
+            padding: 0 1rem 1rem;
+        }
+
+        .read-more {
+            background-color: var(--bergen-light-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 1rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: var(--bergen-blue);
+        }
+
+        .more-info {
+            display: none;
+            padding: 1rem;
+            background-color: var(--bergen-light);
+            border-top: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: var(--bergen-blue);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--bergen-light-blue);
+        }
+
+        .norwegian-greeting {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .itim-regular {
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://seeklogo.com/images/B/bergen-norway-logo-4D2F1209B0-seeklogo.com.png" alt="Bergen Explorer Logo">
+                <span>Bergen Explorer</span>
+            </div>
+            <ul>
+                <li><a href="../hero.html">Home</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="itim-regular">Explore Bergen: Popular Activities</h1>
+        <p class="subtitle">Discover the best of Norway's gateway to the fjords</p>
+    </header>
+
+    <main id="activities">
+        <div class="activity-grid">
+            <div class="activity-card">
+                <img src="https://norwayexclusive.com/wp-content/uploads/2017/10/HD_Bergen-Bryggen-Dag-shutterstock_215341468.jpg" alt="Bryggen">
+                <h2>Bryggen</h2>
+                <p>Explore the historic Hanseatic wharf, a UNESCO World Heritage site.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>Bryggen, the old wharf of Bergen, is a reminder of the town's importance as part of the Hanseatic League's trading empire from the 14th to the mid-16th century. The colorful wooden buildings on Bryggen have been ravaged by many fires, the last in 1955, but its main structure has been preserved. Many of the buildings now house museums, shops, restaurants and pubs.</p>
+                    <ul>
+                        <li><strong>History:</strong> Dating back to the 14th century, Bryggen showcases Bergen's rich maritime heritage.</li>
+                        <li><strong>Architecture:</strong> Colorful wooden buildings line the old wharf, creating a picturesque scene.</li>
+                        <li><strong>Activities:</strong> Explore museums, artisan workshops, and enjoy local cuisine in historic surroundings.</li>
+                    </ul>
+                    <p>A visit to Bryggen is a journey through time and a must-see for anyone visiting Bergen!</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/56337e1fe4b0292ace766e5e/1537650230582-RS223H1URXQ88KREJSFO/image-asset.jpeg" alt="Mount Fløyen">
+                <h2>Mount Fløyen</h2>
+                <p>Take the Fløibanen funicular for panoramic views of Bergen and the fjords.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>Mount Fløyen is one of Bergen's most popular attractions. The Fløibanen funicular takes you to the top in about 8 minutes, where you can enjoy spectacular views of Bergen and the surrounding fjords and mountains.</p>
+                    <ul>
+                        <li><strong>Funicular Ride:</strong> A scenic journey to the top of Mount Fløyen, offering breathtaking views.</li>
+                        <li><strong>Hiking Trails:</strong> Explore numerous trails suitable for all skill levels.</li>
+                        <li><strong>Facilities:</strong> Restaurant, cafe, and a playground for children at the summit.</li>
+                    </ul>
+                    <p>Perfect for nature lovers and those seeking panoramic views of Bergen and its beautiful surroundings!</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <img src="https://en.visitbergen.com/imageresizer/?image=%2Fdmsimgs%2FFisketorget-Bergen-Norge-sommer_553979211.jpg&action=ProductDetailExtraLargeNew" alt="Fish Market">
+                <h2>Fish Market</h2>
+                <p>Visit the lively fish market and taste fresh seafood from the Norwegian coast.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>Bergen's Fish Market is one of Norway's most visited outdoor markets. Located in the heart of the city, it has been a meeting place for merchants and fishermen since the 1200s.</p>
+                    <ul>
+                        <li><strong>Fresh Seafood:</strong> Wide variety of fish and seafood caught from the Norwegian coast.</li>
+                        <li><strong>Local Produce:</strong> Fruits, vegetables, and other local specialties available.</li>
+                        <li><strong>Dining:</strong> Several eateries where you can enjoy freshly prepared seafood dishes.</li>
+                    </ul>
+                    <p>A paradise for food lovers and a great place to experience local culture and cuisine!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/visitBergen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/visitBergen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/visitbergen" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bergen Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreButtons = document.querySelectorAll('.read-more');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const moreInfo = button.nextElementSibling;
+                    if (moreInfo.style.display === 'block') {
+                        moreInfo.style.display = 'none';
+                        button.textContent = 'Read More';
+                    } else {
+                        moreInfo.style.display = 'block';
+                        button.textContent = 'Read Less';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
