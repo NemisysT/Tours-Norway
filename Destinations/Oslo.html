@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Oslo, Norway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 5px solid #2980b9;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .highlights {
+            background-color: #2980b9;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .highlights h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlights ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .highlights li {
+            background-color: #3498db;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .highlights li:hover {
+            background-color: #1abc9c;
+        }
+
+        .weather-widget {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-right: 1rem;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-detail-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .weather-detail-text {
+            font-size: 1rem;
+        }
+
+        .weather-location {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .landmarks {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.landmarks h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+.landmarks h4 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #343a40;
+}
+
+.landmarks p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.outdoor-activities {
+    background-color: #e0f7fa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.outdoor-activities h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00796b;
+}
+
+.outdoor-activities h4 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #004d40;
+}
+
+.outdoor-activities p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Oslo, Norway</h1>
+        <p>The Heart of Scandinavia</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Downtown_Oslo_Norway_skyline.png" alt="Oslo skyline">
+                <div class="hero-text">
+                    <h2>Welcome to Oslo</h2>
+                    <p>A City of Culture and Innovation</p>
+                </div>
+            </div>
+
+            <h3>Image Gallery</h3>
+            <br>
+            <div class="image-gallery">
+                <img src="https://res.cloudinary.com/simpleview/image/upload/v1634555140/clients/norway/Oslo_operahus_2_447c01a6-7d1c-4cd6-a87a-0c38e552a893.jpg" alt="Oslo Opera House">
+                <img src="https://tellusdmsmedia.newmindmedia.com/wsimgs/Monolitten_Vigelandsparken_VO09640-2_651672002.jpg[ProductImage][441D6111A6C32DD14891F76E491CA5]" alt="Vigeland Park">
+                <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://media.newmindmedia.com/TellUs/image/%3Ffile%3DAkershus-festning_kveld__c_VisitOSLO_Thomas-Johannessen_880943739_74708145.jpg&dh%3D532&dw%3D800&t%3D4" alt="Akershus Fortress">
+            </div>
+
+            <div class="highlights">
+                <h3>Must-See Highlights</h3>
+                <ul>
+                    <li>Oslo Opera House<a href="https://www.operaen.no/en/"></a></li>
+                    <li>Vigeland Sculpture Park<a href="https://www.frognerpark.no/en/"></a></li>
+                    <li>Akershus Fortress<a href="https://www.kulturminneskatten.no/en/akercastle"></a></li>
+                    <li>The National Gallery<a href="https://www.nasjonalmuseet.no/en/"></a></li>
+                    <li>Fram Museum<a href="https://frammuseum.no/en/"></a></li>
+                    <li>Holmenkollen Ski Museum<a href="https://www.skiforeningen.no/en/"></a></li>
+                </ul>
+            </div>
+
+            <div class="weather-widget">
+                <h3>Current Weather</h3>
+                <div class="weather-info">
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weatherIcon">🌤️</div>
+                        <div class="temperature" id="temperature">15°C</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💧</span>
+                            <span class="weather-detail-text" id="humidity">60% Humidity</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💨</span>
+                            <span class="weather-detail-text" id="wind">10 km/h Wind</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">🌡️</span>
+                            <span class="weather-detail-text" id="feelsLike">Feels like 14°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-location" id="location">Ålesund, Norway</div>
+            </div>
+
+            <!-- Dynamic Component 1: Cultural Landmarks -->
+            <div class="cultural-landmarks">
+                <div class="landmarks">
+                    <h3>Must-Visit Landmarks in Oslo</h3>
+                    <p>Oslo is home to several iconic landmarks that reflect its rich history and culture. Here are a few you shouldn't miss:</p>
+                    
+                    <h4>The Royal Palace</h4>
+                    <p>The Royal Palace (Slottet) is the official residence of the Norwegian monarch. Surrounded by beautiful gardens, the palace offers guided tours that showcase its stunning architecture and historical significance. Be sure to catch the changing of the guard ceremony!</p>
+                
+                    <h4>The Nobel Peace Center</h4>
+                    <p>The Nobel Peace Center is dedicated to the legacy of Alfred Nobel and the Nobel Peace Prize. It features exhibitions on peace efforts and the work of laureates, providing insight into the global pursuit of peace and human rights.</p>
+                
+                    <h4>Vigeland Sculpture Park</h4>
+                    <p>Vigeland Sculpture Park, part of Frogner Park, showcases over 200 sculptures by artist Gustav Vigeland. The park is a testament to human emotions and relationships, making it a beautiful place for a leisurely stroll.</p>
+                
+                    <h4>Oslo Opera House</h4>
+                    <p>The Oslo Opera House is an architectural marvel situated on the waterfront. Visitors can walk up its sloping roof for panoramic views of the city and the fjord, and enjoy performances inside this world-class venue.</p>
+                </div>
+                
+                <img src="https://www.campervannorway.com/assets/img/blog/514.png" alt="Royal Palace" style="width:100%; border-radius: 10px;">
+            </div>
+
+            <!-- Dynamic Component 2: Outdoor Activities Section -->
+            <div class="outdoor-activities-section">
+                <div class="outdoor-activities">
+                    <h3>Outdoor Adventures in Oslo</h3>
+                    <p>Oslo's natural surroundings offer a plethora of outdoor activities for adventure enthusiasts and nature lovers alike. Here are some must-try experiences:</p>
+                    
+                    <h4>Hiking in Nordmarka Forest</h4>
+                    <p>The Nordmarka forest is a sprawling wilderness just north of the city. With numerous trails for hiking, biking, and skiing in the winter, it’s an outdoor paradise. Enjoy the tranquility of nature, picturesque lakes, and scenic viewpoints, making it perfect for a day of exploration.</p>
+                
+                    <h4>Exploring the Oslo Fjord</h4>
+                    <p>The Oslo Fjord is a stunning natural attraction, offering opportunities for kayaking, sailing, and boat tours. Take a scenic ferry ride to explore the islands, where you can relax on beaches, picnic, or visit historical sites, all while soaking in the breathtaking views.</p>
+                
+                    <h4>Cross-Country Skiing</h4>
+                    <p>During the winter months, Oslo transforms into a winter wonderland, and cross-country skiing becomes a popular activity. The city has an extensive network of groomed trails that cater to all skill levels, allowing you to glide through beautiful snowy landscapes.</p>
+                
+                    <h4>Cycling along the Akerselva River</h4>
+                    <p>For a leisurely ride, cycle along the scenic Akerselva River. This route takes you through parks, waterfalls, and vibrant neighborhoods, showcasing the city's natural beauty and cultural highlights. Rent a bike and enjoy the fresh air as you explore.</p>
+                </div>
+                
+                <img src="https://www.thefjords.no/wp-content/uploads/2021/11/The-Fjords-03.jpg" alt="Oslo Fjord" style="width:100%; border-radius: 10px;">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Oslo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Ålesund
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Oslo,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
+        }
+    
+        fetchWeather();
+    </script>
+
+</body>
+</html>

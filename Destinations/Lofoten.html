@@ -3,286 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Lofoten Islands</title>
+    <title>Explore Lofoten, Norway</title>
     <style>
-        :root {
-            --primary-color: #00796b;
-            --secondary-color: #004d40;
-            --background-color: #e0f7fa;
-            --text-color: #004d40;
-            --card-bg-color: #ffffff;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #d81e5b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 2rem;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 10px;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        #carousel {
+        .hero {
             position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            margin: 0 auto 40px;
+            height: 60vh;
             overflow: hidden;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
         }
 
-        .carousel-img {
-            position: absolute;
+        .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
         }
 
-        .carousel-img.active {
-            opacity: 1;
-        }
-
-        .carousel-caption {
+        .hero-text {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background-color: var(--card-bg-color);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-content h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .info-section {
-            background-color: var(--card-bg-color);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 40px;
-        }
-
-        .info-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .info-tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .tab-button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .tab-button:hover, .tab-button.active {
-            background-color: var(--secondary-color);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        #weather-widget {
-            background-color: var(--card-bg-color);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 40px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        #weather-widget h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .activities {
+            background-color: #1e90ff;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .activities h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .activities ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .activities li {
+            background-color: #5cacee;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .activities li:hover {
+            background-color: #4682b4;
+        }
+
+        .weather-widget {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-right: 1rem;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-detail-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .weather-detail-text {
+            font-size: 1rem;
+        }
+
+        .weather-location {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
         footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: var(--primary-color);
+            background-color: #d81e5b;
             color: white;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .cards-container {
-                grid-template-columns: 1fr;
-            }
-
-            .info-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tab-button {
-                margin-bottom: 10px;
-                width: 100%;
-            }
+            text-align: center;
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header>
-            <h1>Discover Lofoten Islands</h1>
-            <p>Experience the breathtaking beauty of Norway's Arctic paradise</p>
-        </header>
+    <header>
+        <h1>Explore Lofoten, Norway</h1>
+        <p>A Natural Wonderland</p>
+    </header>
 
-        <!-- Image Carousel -->
-        <div id="carousel">
-            <img src="https://images.unsplash.com/photo-1520769945061-0a448c463865?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="carousel-img active" alt="Lofoten Islands Scenic View">
-            <img src="https://images.unsplash.com/photo-1582573732277-c5444fa37391?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80" class="carousel-img" alt="Northern Lights over Lofoten">
-            <img src="https://images.unsplash.com/photo-1598018553943-29ace5bf9867?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="carousel-img" alt="Lofoten Islands Fishing Village">
-            <div class="carousel-caption">Explore the magic of Lofoten</div>
-        </div>
-
-        <!-- Cards Section -->
-        <div class="cards-container">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=1421&q=80" alt="Mountain Hiking">
-                <div class="card-content">
-                    <h3>Mountain Hiking</h3>
-                    <p>Explore the stunning mountain trails with spectacular views of fjords and the Arctic Ocean.</p>
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="https://images.squarespace-cdn.com/content/v1/5b676719697a98ab3d92e200/1558430634639-9FQKZK1DMC6IID6S9PNP/norway_lofoten_tomas_havel_8.jpg" alt="Lofoten landscape">
+                <div class="hero-text">
+                    <h2>Welcome to Lofoten</h2>
+                    <p>Where Nature Meets Adventure</p>
                 </div>
             </div>
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-4.0.3&auto=format&fit=crop&w=1964&q=80" alt="Aurora Borealis">
-                <div class="card-content">
-                    <h3>Aurora Borealis</h3>
-                    <p>Witness the magical Northern Lights dancing across the sky in one of the best locations in the world.</p>
+
+            <h3>Image Gallery</h3>
+            <br>
+            <div class="image-gallery">
+                <img src="https://res.cloudinary.com/gofjords-com/images/w_2560,h_1707,c_scale/f_auto,q_auto:eco/v1698066132/Destinations/Lofoten/Henningsvaer/Henningsvaer-fishing-village-Lofoten-Norway-photo-Ina-Cristine-Helljesen/Henningsvaer-fishing-village-Lofoten-Norway-photo-Ina-Cristine-Helljesen.jpg?_i=AA" alt="Lofoten fishing village">
+                <img src="https://cdn.sanity.io/images/4aans0in/production/6cc584048bb517613e7d95e1631881a9858eeb77-2000x1331.jpg?rect=0,104,2000,1125&w=3840&h=2160&fm=webp&q=100&fit=max&auto=format" alt="Lofoten mountains">
+                <img src="https://guidetolofoten.com/wp-content/uploads/2023/08/northern-lights-in-lofoten_martin-kulhavy_04-scaled.jpg" alt="Northern lights in Lofoten">
+            </div>
+
+            <div class="activities">
+                <h3>Popular Activities</h3>
+                <ul>
+                    <li>Hiking in Reine<a href="https://www.visitlofoten.com/hiking-in-reine-p944103"></a></li>
+                    <li>Kayaking in the Fjords<a href="https://www.helgeland.no/en/hiking/kayaking-in-lofoten/"></a></li>
+                    <li>Fishing Tours<a href="https://www.norwaysbest.com/lofoten-fishing-tours"></a></li>
+                    <li>Surfing at Unstad<a href="https://www.unstadart.no/"></a></li>
+                    <li>Explore the Lofotr Viking Museum<a href="https://www.lofotr.no/en/"></a></li>
+                    <li>Photography Tours<a href="https://www.visitlofoten.com/photography-tours-in-lofoten-p959573"></a></li>
+                </ul>
+            </div>
+
+            <div class="weather-widget">
+                <h3>Current Weather</h3>
+                <div class="weather-info">
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weatherIcon">🌦️</div>
+                        <div class="temperature" id="temperature">12°C</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💧</span>
+                            <span class="weather-detail-text" id="humidity">70% Humidity</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💨</span>
+                            <span class="weather-detail-text" id="wind">15 km/h Wind</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">🌡️</span>
+                            <span class="weather-detail-text" id="feelsLike">Feels like 10°C</span>
+                        </div>
+                    </div>
                 </div>
+                <div class="weather-location" id="location">Lofoten, Norway</div>
             </div>
-            <div class="card">
-                <img src="https://nordicventures.com/wp-content/uploads/2019/02/day-tour-02.jpg" alt="Kayaking Adventures">
-                <div class="card-content">
-                    <h3>Kayaking Adventures</h3>
-                    <p>Paddle through the crystal-clear waters and hidden fjords, exploring the coastline's hidden gems.</p>
+            <br><br>
+            <!-- Dynamic Component 1: Scenic Viewpoint -->
+            <div class="scenic-viewpoint-showcase">
+                <div class="viewpoints-section">
+                    <h2>✨ Discover Breathtaking Viewpoints in Lofoten! ✨</h2>
+                
+                    <h3>🌄 Reinebringen: A Hiker's Dream</h3>
+                    <p>
+                        Perched majestically above the charming fishing village of Reine, <strong>Reinebringen</strong> beckons adventurers with promises of unforgettable vistas. This hike, while demanding, transforms every bead of sweat into sheer exhilaration as you conquer the rugged terrain. With each step, anticipation builds for that moment when the landscape unfurls before you!
+                    </p>
+                
+                    <h4>The Spectacular Panorama Awaits!</h4>
+                    <p>
+                        Once you reach the summit, prepare to be blown away! From this breathtaking perch, feast your eyes on the postcard-perfect village of Reine, where vibrant red and yellow rorbu (traditional fishermen’s cabins) cling to the shores. Below, the fjords sparkle like jewels, framed by the dramatic peaks that soar into the sky. On a clear day, the view stretches far and wide, unveiling the hidden gems of Moskenesøya and Værøy—this is what dreams are made of!
+                    </p>
+                
+                    <h3>👣 Your Adventure Awaits</h3>
+                    <p>
+                        The trek to Reinebringen is not for the faint-hearted, but every ounce of effort is worth it for the thrill-seekers and photographers alike. Spanning about <strong>2 kilometers</strong> (1.2 miles) with a steep elevation gain of around <strong>450 meters</strong> (1,476 feet), this trail invites you to push your limits and soak in the awe-inspiring views.
+                    </p>
+                
+                    <h4>Hiking Tips to Elevate Your Experience:</h4>
+                    <ul>
+                        <li><strong>Rise and Shine:</strong> Start your day early! Catch the sunrise illuminating the mountains and enjoy the tranquility before the crowds arrive.</li>
+                        <li><strong>Layer Up:</strong> The weather can be as unpredictable as a Norwegian fjord, so pack layers and a good rain jacket. Better safe than soggy!</li>
+                        <li><strong>Grip and Go:</strong> The path can get slippery, especially after rain. Make sure your hiking boots have solid traction for a safe ascent!</li>
+                    </ul>
+                
+                    <h3>🌟 Beyond Reinebringen: More Magical Viewpoints</h3>
+                    <p>
+                        Don’t stop at Reinebringen! Lofoten is a treasure trove of stunning viewpoints just waiting for you to explore:
+                    </p>
+                    <ul>
+                        <li><strong>Kvalvika Beach:</strong> Imagine soft sands embraced by towering cliffs! The hike to this beach is scenic, and the viewpoint rewards you with a mesmerizing view that feels like paradise—pack a picnic and soak in the serenity!</li>
+                        <li><strong>Fredvang Bridges:</strong> Not only an engineering marvel, but these bridges also offer jaw-dropping views of the waters and peaks that will make your heart race. Snap some pics that capture the wild spirit of Lofoten!</li>
+                        <li><strong>Nusfjord:</strong> Step back in time in one of Norway's best-preserved fishing villages! The viewpoint overlooking this historic gem provides a striking contrast between the village's rich heritage and the untouched wilderness surrounding it.</li>
+                    </ul>
+                
+                    <h3>📸 Capture the Essence of Lofoten!</h3>
+                    <p>
+                        Every viewpoint in Lofoten tells a story—of dramatic cliffs, crystal-clear waters, and idyllic villages that seem to float on the landscape. Whether you’re an adventurous hiker, a photography aficionado, or simply seeking a peaceful retreat into nature, Lofoten's viewpoints promise experiences that resonate long after your visit.
+                    </p>
+                    <p>
+                        Dive into these stunning locations, and connect with the raw beauty of nature. Here in Lofoten, every vista is a reminder of the breathtaking wonders that await, ready to create unforgettable memories that linger in your heart!
+                    </p>
                 </div>
+                
+                
+                <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://images.citybreakcdn.com/image.aspx%3FImageId%3D7176352" alt="Reinebringen viewpoint" style="width:100%; border-radius: 10px;">
+            </div>
+            <br><br>
+            <!-- Dynamic Component 2: Local Culture Section -->
+            <div class="local-culture-section">
+                <div class="culture-section">
+                    <h2>🎉 Dive into Lofoten's Rich Local Culture! 🎉</h2>
+                
+                    <h3>🌊 Traditional Fishing Villages: A Glimpse into History</h3>
+                    <p>
+                        Step back in time as you wander through the charming <strong>fishing villages</strong> of Lofoten, where the air is filled with the tantalizing scent of fresh catch and the spirit of the sea. Each village, like a scene straight out of a storybook, boasts colorful rorbu (fishermen’s cabins) that have stood the test of time, telling tales of generations who have thrived on these rugged shores.
+                    </p>
+                
+                    <h4>Experience the Rhythms of Coastal Life</h4>
+                    <p>
+                        Here, life moves with the tides! Join local fishermen as they cast their nets, and learn about the traditional methods that have been passed down through the ages. Engage with the community during lively fish festivals, where you can taste freshly prepared dishes made from the day’s catch. Nothing compares to the flavor of <strong>stockfish</strong> or the warmth of a cozy meal shared with newfound friends!
+                    </p>
+                
+                    <h3>🌿 Sami Culture: A Unique Heritage</h3>
+                    <p>
+                        Beyond the coastline, the <strong>Sami people</strong>—the indigenous inhabitants of the Arctic—invite you to discover their rich culture and traditions. Experience the unique connection they have with nature, from their herding of reindeer to the intricate craftsmanship of traditional clothing and handicrafts. 
+                    </p>
+                
+                    <h4>Join in Authentic Sami Experiences!</h4>
+                    <p>
+                        Participate in a reindeer sledding adventure, gliding across snowy landscapes while learning about the Sami way of life. Embrace the stories passed down through generations as you gather around a cozy campfire, enjoying <strong>bidos</strong> (a traditional Sami stew) and listening to the enchanting sounds of joik, the Sami form of singing that expresses emotions and stories of the land.
+                    </p>
+                
+                    <h3>📸 Capture the Heartbeat of Lofoten</h3>
+                    <p>
+                        As you immerse yourself in the local culture, don't forget to document these unforgettable moments! From candid shots of fishermen at work to serene landscapes that capture the essence of Sami traditions, your lens will be a gateway to stories that transcend time.
+                    </p>
+                
+                    <h4>Why Lofoten's Culture is Unmissable:</h4>
+                    <ul>
+                        <li><strong>Warm Hospitality:</strong> The locals welcome you with open arms, eager to share their stories and traditions. Each encounter leaves a lasting impression!</li>
+                        <li><strong>Culinary Delights:</strong> Savor traditional dishes that reflect the bounty of the sea and the richness of the land, each bite telling a story of its origin.</li>
+                        <li><strong>Artistic Expression:</strong> Explore local galleries showcasing breathtaking artwork inspired by the stunning landscapes and vibrant culture of Lofoten.</li>
+                    </ul>
+                
+                    <h3>🌟 Embrace the Spirit of Lofoten!</h3>
+                    <p>
+                        Whether you’re soaking in the stories of local fishermen or engaging with the Sami culture, Lofoten offers a profound sense of place that enriches your travel experience. Each moment spent in this magical archipelago is a step into a world where nature and tradition intertwine beautifully. 
+                    </p>
+                    <p>
+                        Come, embrace the spirit of Lofoten—where culture, history, and breathtaking landscapes converge to create memories that will linger long after you leave!
+                    </p>
+                </div>
+                
+                <img src="https://images.ctfassets.net/7mmwp5vb96tc/2B5NzeHMrMcIuTpllrxJ3S/7300970ab7bbc870cdefdd272340073b/Sami_Culture_Kjollefjord_Norway_HGR_54857_1920_Photo_Orjan_Bertelsen.jpg?q=75&w=3840&fm=webp" alt="Sami culture" style="width:100%; border-radius: 10px;">
             </div>
         </div>
+    </main>
 
-        <!-- Information Section with Tabs -->
-        <div class="info-section">
-            <h2 style="position:relative;">Discover More About Lofoten</h2>
-            <div class="info-tabs">
-                <button class="tab-button active" onclick="openTab(event, 'history')">History</button>
-                <button class="tab-button" onclick="openTab(event, 'culture')">Culture</button>
-                <button class="tab-button" onclick="openTab(event, 'activities')">Activities</button>
-            </div>
-            <div id="history" class="tab-content active">
-                <p>The Lofoten Islands have a rich history dating back to the Viking Age. For centuries, these islands have been the center of great cod fisheries, particularly the production of stockfish. The unique combination of mountains, peaks, and sheltered bays has made Lofoten a vital part of Norway's maritime heritage.</p>
-            </div>
-            <div id="culture" class="tab-content">
-                <p>Lofoten's culture is deeply rooted in its fishing traditions. The islands are dotted with picturesque fishing villages, each with colorful, red-painted Rorbuer (fishermen's cabins) that reflect a way of life dating back centuries. Art and craftsmanship are also celebrated in Lofoten, with numerous galleries showcasing local talent.</p>
-            </div>
-            <div id="activities" class="tab-content">
-                <p>Outdoor enthusiasts can explore a variety of activities in Lofoten, including hiking, fishing, surfing, and wildlife spotting. The islands are also known for their remarkable bird colonies, with puffins and sea eagles being popular sightings. During the summer, visitors can experience the midnight sun, while winter brings the magical Northern Lights.</p>
-            </div>
-        </div>
-
-        <!-- Weather Widget Placeholder -->
-        <div id="weather-widget">
-            <h2>Current Weather in Lofoten</h2>
-            <p>Weather data goes here</p>
-        </div>
-
-        <!-- Footer Section -->
-        <footer>
-            <p>&copy; 2024 Discover Lofoten Islands. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2024 Explore Lofoten. All rights reserved.</p>
+    </footer>
 
     <script>
-        function openTab(event, tabName) {
-            var i, tabcontent, tabbuttons;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Oslo
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Lofoten&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
             }
-            tabbuttons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabbuttons.length; i++) {
-                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            event.currentTarget.className += " active";
         }
-        document.getElementById("history").style.display = "block";
+    
+        fetchWeather();
     </script>
 </body>
 </html>

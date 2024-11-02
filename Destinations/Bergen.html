@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Bergen, Norway</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #00a86b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            position: relative;
+            height: 60vh;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .image-gallery img {
+            width: 32%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .activities {
+            background-color: #4682b4;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .activities h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .activities ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .activities li {
+            background-color: #3a6d99;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .activities li:hover {
+            background-color: #2c5277;
+        }
+
+        .weather-widget {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .weather-widget h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            font-size: 4rem;
+            margin-right: 1rem;
+        }
+
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .weather-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .weather-detail-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .weather-detail-text {
+            font-size: 1rem;
+        }
+
+        .weather-location {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #00a86b;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Bergen, Norway</h1>
+        <p>The Gateway to the Fjords</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <img src="https://live.staticflickr.com/2670/3801202273_c022433981_b.jpg" alt="Bergen cityscape">
+                <div class="hero-text">
+                    <h2>Welcome to Bergen</h2>
+                    <p>A UNESCO World Heritage Site</p>
+                </div>
+            </div>
+
+            <h3>Image Gallery</h3>
+            <br>
+            <div class="image-gallery">
+                <img src="https://www.campervannorway.com/assets/img/blog/513/shutterstock_755058535-compressed.jpg" alt="Bryggen Wharf">
+                <img src="https://d2u01a166ba9ge.cloudfront.net/media/rc//1682505857/utib-stoltzen-2022-red.jpg" alt="Bergen mountains">
+                <img src="https://media.istockphoto.com/id/1177731184/photo/beautiful-view-of-bergen-city-at-twilight.jpg?s=612x612&w=0&k=20&c=L2doroZPBmizCPR5SuzHhrFLXE9b8t7jIXsfmjsPyvA=" alt="Bergen view from Fløyen">
+            </div>
+
+            <div class="activities">
+                <h3>Popular Activities</h3>
+                <ul>
+                    <li>Visit Bryggen Wharf<a href="https://www.visitbergen.com/things-to-do/bryggen-wharf-p556713"></a></li>
+                    <li>Fløyen Mountain Hike<a href="https://www.floyen.no/en/"></a></li>
+                    <li>Fjord Tours<a href="https://www.fjordtours.com/"></a></li>
+                    <li>Fish Market<a href="https://www.visitbergen.com/things-to-do/fish-market-p544393"></a></li>
+                    <li>Troldhaugen Museum<a href="https://www.bergenhusfestning.no/en/troldhaugen"></a></li>
+                    <li>Hiking in the Seven Mountains<a href="https://www.visitbergen.com/things-to-do/hiking-in-the-seven-mountains-p556703"></a></li>
+                </ul>
+            </div>
+
+            <div class="weather-widget">
+                <h3>Current Weather</h3>
+                <div class="weather-info">
+                    <div class="weather-main">
+                        <div class="weather-icon" id="weatherIcon">🌤️</div>
+                        <div class="temperature" id="temperature">15°C</div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💧</span>
+                            <span class="weather-detail-text" id="humidity">60% Humidity</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">💨</span>
+                            <span class="weather-detail-text" id="wind">10 km/h Wind</span>
+                        </div>
+                        <div class="weather-detail">
+                            <span class="weather-detail-icon">🌡️</span>
+                            <span class="weather-detail-text" id="feelsLike">Feels like 14°C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-location" id="location">Ålesund, Norway</div>
+            </div>
+
+            <!-- Dynamic Component 1: Bryggen Showcase -->
+            <div class="art-nouveau-showcase">
+                <h2>Explore Bryggen</h2>
+                <p>Experience the Rich History and Architecture of Bryggen
+
+                    Step into the enchanting world of Bryggen, a UNESCO World Heritage site that stands as a testament to Norway's rich maritime history and vibrant trade heritage. Located along the picturesque harbor of Bergen, Bryggen is a series of historic wooden wharves that date back to the 14th century, showcasing the iconic architecture of the Hanseatic League.
+                    
+                    As you stroll through the narrow alleyways and charming pathways, you'll be captivated by the colorful wooden buildings, many of which house artisanal shops, galleries, and cozy cafés. Each structure tells a story of the bustling trade that once flowed through these docks, where merchants from various countries gathered to exchange goods, culture, and ideas.
+                    
+                    Don't miss the chance to visit the Hanseatic Museum, where you can immerse yourself in the life of the merchants who lived and worked in Bryggen. Exhibits feature artifacts, historical documents, and the preserved interiors of merchant homes that vividly depict daily life in the 18th and 19th centuries.
+                    
+                    As you explore, take a moment to appreciate the craftsmanship of the buildings, with their distinctive gabled roofs and vibrant facades that have been meticulously preserved over the years. The charm of Bryggen is further enhanced by its breathtaking backdrop of the surrounding mountains and fjords, creating a scenic atmosphere that feels like stepping back in time.
+                    
+                    Whether you're a history enthusiast, an architecture lover, or simply looking for a unique shopping experience, Bryggen offers something for everyone. Enjoy the local cuisine at waterfront restaurants, sample freshly caught seafood, or pick up unique souvenirs crafted by local artisans.
+                    
+                    Bryggen isn't just a place to visit; it's an experience that connects you to the past while inviting you to create new memories in one of Norway's most iconic locales. Soak in the beauty, history, and culture of Bryggen, and let it inspire your journey through Bergen!</p>
+                <img src="https://riksantikvaren.no/content/uploads/2020/12/Bryggen-i-Bergen-verdensarvsted-1920x1318-1.jpg" alt="Bryggen buildings" style="width:100%; border-radius: 10px;">
+            </div>
+
+            <!-- Dynamic Component 2: Local Food Section -->
+            <div class="local-food-section">
+                <h2>Delicious Local Cuisine</h2>
+                <p>Don't Miss the Chance to Taste the Famous Fish Soup and Other Local Dishes at the Vibrant Fish Market
+
+                    As you immerse yourself in the charm of Bryggen, be sure to venture over to Bergen’s bustling Fish Market, a culinary hotspot that brings together the freshest seafood and local delicacies. The market is a feast for the senses, with vibrant stalls brimming with an array of fish and shellfish, all sourced from the surrounding waters.
+                    
+                    One of the must-try dishes at the Fish Market is the renowned fish soup, a hearty blend of freshly caught fish, creamy broth, and a medley of vegetables and herbs that reflects the flavors of the sea. Each spoonful is a warm embrace, perfect for savoring while you take in the lively atmosphere around you. Pair your soup with freshly baked bread, and you have a meal that perfectly captures the essence of Norwegian cuisine.
+                    
+                    In addition to fish soup, the market offers an array of local dishes that are sure to delight your taste buds. Sample traditional favorites like "rakfisk" (fermented fish), "lutefisk" (dried fish treated with lye), and a variety of smoked salmon prepared in different styles. Don’t forget to explore the stalls offering local cheeses, reindeer meat, and artisanal products crafted by Bergen's skilled producers.
+                    
+                    The Fish Market is not just about food; it's a cultural experience that showcases the rich culinary heritage of Bergen. As you interact with friendly vendors and learn about the day's catch, you’ll gain insights into the fishing traditions that have shaped the region for centuries.
+                    
+                    Whether you’re a seafood aficionado or a curious traveler looking to explore local flavors, the Fish Market is a delightful destination that perfectly complements your journey through Bryggen. So come hungry, and let the vibrant atmosphere and delicious offerings at the Fish Market create lasting memories of your visit to Bergen!</p>
+                <img src="https://tripjive.com/wp-content/uploads/2024/03/What-is-the-best-seafood-dish-to-try-in-Bergen.jpg" alt="Local food" style="width:100%; border-radius: 10px;">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Explore Norway. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function fetchWeather() {
+            try {
+                // Step 1: Fetch latitude and longitude for Oslo
+                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Bergen&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                if (!geoResponse.ok) {
+                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
+                }
+                const geoData = await geoResponse.json();
+                if (geoData.length === 0) {
+                    throw new Error('No data found for the specified location.');
+                }
+    
+                const { lat, lon } = geoData[0];
+    
+                // Step 2: Fetch weather data using latitude and longitude
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
+                if (!weatherResponse.ok) {
+                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
+                }
+                const weatherData = await weatherResponse.json();
+    
+                // Update weather widget with data
+                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
+                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
+                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
+                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
+                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
+    
+                // Weather icons based on weather conditions
+                const weatherCondition = weatherData.weather[0].main;
+                const weatherIcons = {
+                    'Clear': '☀️',
+                    'Clouds': '☁️',
+                    'Rain': '🌧️',
+                    'Drizzle': '🌦️',
+                    'Thunderstorm': '⛈️',
+                    'Snow': '❄️',
+                    'Mist': '🌫️'
+                };
+                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                // Update the UI to show an error message
+                document.getElementById('temperature').textContent = 'Error fetching data';
+                document.getElementById('humidity').textContent = '';
+                document.getElementById('wind').textContent = '';
+                document.getElementById('feelsLike').textContent = '';
+                document.getElementById('location').textContent = '';
+                document.getElementById('weatherIcon').textContent = '';
+            }
+        }
+    
+        fetchWeather();
+    </script>
+</body>
+</html>
