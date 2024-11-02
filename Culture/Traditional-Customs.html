@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norway Traditions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Immersive Norwegian Culture and Traditions</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         :root {
-            --primary-color: #c53030;
-            --secondary-color: #2b6cb0;
-            --accent-color: #ecc94b;
-            --text-color: #2d3748;
-            --bg-color: #f7fafc;
+            --primary-color: #003366;
+            --secondary-color: #ff6b6b;
+            --accent-color: #4ecdc4;
+            --text-color: #2c3e50;
+            --background-color: #ecf0f1;
         }
 
         * {
@@ -22,271 +23,270 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: var(--text-color);
-            background-color: var(--bg-color);
+            background-color: var(--background-color);
             overflow-x: hidden;
-        }
-
-        .header {
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            background-color: var(--primary-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .nav h1 {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        #menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
         }
 
         .parallax-container {
-            perspective: 1px;
             height: 100vh;
             overflow-x: hidden;
             overflow-y: auto;
+            perspective: 1px;
         }
 
         .parallax-layer {
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
             bottom: 0;
-            left: 0;
         }
 
-        .parallax-bg {
+        .parallax-background {
             transform: translateZ(-1px) scale(2);
+            background: url('https://images.unsplash.com/photo-1506655624258-6e7d8205ad5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center;
+            background-size: cover;
+            z-index: -1;
         }
 
-        .content {
-            transform: translateZ(0);
+        header {
+            background-color: rgba(0, 51, 102, 0.9);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
             position: relative;
-            padding-top: 100vh;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
-        .section {
-            min-height: 100vh;
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        nav {
             display: flex;
-            align-items: center;
             justify-content: center;
-            padding: 5rem 1rem;
+            gap: 20px;
+            margin-top: 1rem;
         }
 
-        .section-content {
-            max-width: 1000px;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            background: white;
+            margin: 3rem auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
         }
 
         h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
             font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
 
-        .img-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
         }
 
-        .img-animate {
+        .gallery img {
             width: 100%;
-            max-width: 400px;
-            height: auto;
+            height: 250px;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .img-animate:hover {
+        .gallery img:hover {
             transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #three-d-norway {
+            width: 100%;
+            height: 400px;
+            background-color: #001f3f;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -0.2em;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                padding: 1rem 0;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            #menu-toggle {
-                display: block;
-            }
+            h1 { font-size: 2rem; }
+            section { padding: 2rem 1rem; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <h1>Norway Traditions</h1>
-            <button id="menu-toggle">&#9776;</button>
-            <ul class="nav-links" id="menu">
-                <li><a href="#bunad">Bunad</a></li>
-                <li><a href="#folk-music">Folk Music</a></li>
-                <li><a href="#traditional-dances">Traditional Dances</a></li>
-                <li><a href="#other-customs">Other Customs</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <div class="parallax-container">
-        <div class="parallax-layer parallax-bg" style="background-image: url('https://www.economist.com/sites/default/files/images/print-edition/20210529_EUP003_0.jpg'); background-size: cover; background-position: center;"></div>
-        <div class="parallax-layer content">
-            <section id="bunad" class="section">
-                <div class="section-content">
-                    <h2>Bunad - Traditional Norwegian Clothing</h2>
-                    <p>The bunad is a traditional Norwegian costume worn on special occasions such as Constitution Day (May 17th), weddings, and folk dancing events. Each region in Norway has its own distinct bunad design, reflecting local history and culture. Bunads are intricately decorated with embroidery, silver jewelry, and often feature vibrant colors.</p>
-                    <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Traditional Norwegian Bunad" class="img-animate">
-                        <img src="https://images.unsplash.com/photo-1528855275993-0f4a23fedd62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Regional Bunad Variations" class="img-animate">
-                    </div>
+        <div class="parallax-layer parallax-background"></div>
+        <div class="parallax-layer">
+            <header>
+                <h1 class="floating">Discover Norway's Rich Heritage</h1>
+                <nav>
+                    <a href="#introduction">Introduction</a>
+                    <a href="#customs">Customs</a>
+                    <a href="#food">Food</a>
+                    <a href="#clothing">Clothing</a>
+                    <a href="#nature">Nature</a>
+                </nav>
+            </header>
+
+            <section id="introduction">
+                <h2>Welcome to Norway</h2>
+                <p>Norway, a land of breathtaking fjords, midnight sun, and rich cultural heritage, invites you on a journey through time and tradition. From the Viking era to modern innovations, Norwegian culture is a tapestry of resilience, creativity, and harmony with nature.</p>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Norwegian Fjord">
+                    <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Northern Lights">
+                    <img src="https://images.unsplash.com/photo-1560526758-a9a6c7c0a0e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional Norwegian Architecture">
                 </div>
             </section>
 
-            <section id="folk-music" class="section">
-                <div class="section-content">
-                    <h2>Folk Music - The Heartbeat of Tradition</h2>
-                    <p>Norwegian folk music has a rich history dating back centuries. It is characterized by the use of traditional instruments such as the Hardanger fiddle, langeleik (a type of zither), and the bukkehorn (a goat horn). The music often features unique scales and tunings, giving it a haunting and ethereal quality.</p>
-                    <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Folk Music Instruments" class="img-animate">
-                        <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Folk Musicians Performing" class="img-animate">
-                    </div>
+            <section id="customs">
+                <h2>Cultural Customs</h2>
+                <p>Norwegian customs reflect a deep connection to nature, community, and tradition. Some notable customs include:</p>
+                <ul>
+                    <li><strong>Friluftsliv:</strong> The concept of open-air living, embracing outdoor activities regardless of weather.</li>
+                    <li><strong>Dugnad:</strong> Voluntary community work, where neighbors come together to accomplish tasks.</li>
+                    <li><strong>Midsummer (Sankthans):</strong> Celebration of the summer solstice with bonfires and gatherings.</li>
+                </ul>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1527679124583-9208be990bb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Friluftsliv - Hiking in Norway">
+                    <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Midsummer Celebration">
                 </div>
             </section>
 
-            <section id="traditional-dances" class="section">
-                <div class="section-content">
-                    <h2>Traditional Dances - A Celebration of Culture</h2>
-                    <p>Norwegian folk dances are an integral part of the country's cultural heritage. These dances often accompany traditional music and are performed at festivals, weddings, and other celebrations. Popular dances include the Halling (an acrobatic solo dance), Springar (a couple dance), and Gangar (a walking dance).</p>
-                    <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Traditional Norwegian Dance" class="img-animate">
-                        <img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Group Dancing" class="img-animate">
-                    </div>
+            <section id="food">
+                <h2>Traditional Cuisine</h2>
+                <p>Norwegian cuisine is characterized by its use of fresh, local ingredients from both land and sea. Some iconic dishes include:</p>
+                <ul>
+                    <li><strong>Fårikål:</strong> The national dish, consisting of mutton and cabbage.</li>
+                    <li><strong>Brunost:</strong> A sweet brown cheese, often enjoyed on bread or waffles.</li>
+                    <li><strong>Rakfisk:</strong> Fermented trout, a delicacy often served during holidays.</li>
+                    <li><strong>Lefse:</strong> A traditional soft flatbread made with potatoes.</li>
+                </ul>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional Norwegian Meal">
+                    <img src="https://images.unsplash.com/photo-1578861256457-ec3a4f54c3c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Brunost - Brown Cheese">
                 </div>
             </section>
 
-            <section id="other-customs" class="section">
-                <div class="section-content">
-                    <h2>Other Customs - Unique Traditions</h2>
-                    <p>Norway is rich in unique customs that vary by region and community. These include the celebration of Syttende Mai (Constitution Day) on May 17th, the pre-Christmas Julebord parties, the midsummer Sankthansaften bonfires, and the concept of Friluftsliv (outdoor life and connection with nature).</p>
-                    <div class="img-container">
-                        <img src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Norwegian Customs" class="img-animate">
-                        <img src="https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Cultural Celebration" class="img-animate">
-                    </div>
+            <section id="clothing">
+                <h2>Traditional Attire</h2>
+                <p>The bunad, Norway's traditional costume, is a source of pride and cultural identity. Each region has its unique design, reflecting local history and craftsmanship. Bunads are worn during special occasions such as Constitution Day (May 17th) and weddings.</p>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Norwegian Bunad">
+                    <img src="https://images.unsplash.com/photo-1557672172-298e090bd0f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Constitution Day Celebration">
                 </div>
             </section>
+
+            <section id="nature">
+                <h2>Norway's Natural Wonders</h2>
+                <p>Norway's landscape is a testament to the raw beauty of nature. From majestic fjords to the ethereal Northern Lights, the country offers breathtaking experiences:</p>
+                <ul>
+                    <li><strong>Fjords:</strong> Deep, narrow inlets flanked by steep cliffs, carved by glacial erosion.</li>
+                    <li><strong>Midnight Sun:</strong> A natural phenomenon where the sun remains visible at midnight during summer months in the Arctic Circle.</li>
+                    <li><strong>Northern Lights (Aurora Borealis):</strong> A spectacular light show in the night sky, best viewed in Northern Norway.</li>
+                </ul>
+                <div id="three-d-norway" style="text-align: center; margin: 2rem 0;">
+                    <h2>Experience Norway in 3D</h2>
+                    <video controls width="80%" style="border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);">
+                        <source src="../Destinations/assets/Aurora Borealis.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2024 Immersive Norwegian Culture and Traditions. All rights reserved.</p>
+            </footer>
         </div>
     </div>
 
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('show');
-        });
-
+        // Parallax effect
         window.addEventListener('scroll', () => {
-            const scrollPosition = window.pageYOffset;
-            const parallaxBg = document.querySelector('.parallax-bg');
-            parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        });
-
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function handleScroll() {
-            const sections = document.querySelectorAll('.section-content');
-            sections.forEach(section => {
-                if (isInViewport(section)) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-background');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
     </script>
 </body>
