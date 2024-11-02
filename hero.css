@@ -250,11 +250,16 @@ body {
     font-size: 3rem; /* Increased size for a more commanding presence */
     margin-bottom: 2.5rem; /* More breathing space below */
     color: var(--primary-color);
-    font-family: 'Playfair Display', serif; /* Elegant serif font for a luxurious feel */
     letter-spacing: 1px; /* Slight spacing for sophistication */
     text-transform: uppercase; /* Capitalize for a formal touch */
     position: relative; /* Positioning for the pseudo-element */
 }
+/*Custom Font*/
+.itim-regular {
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 /* Add an elegant underline effect */
 .section-title::after {
@@ -271,6 +276,9 @@ body {
 /* Add a hover effect to the underline */
 .section-title:hover::after {
     width: 100%; /* Expand underline on hover */
+}
+#AboutNorway{
+    color: #e95d5d;
 }
 
   

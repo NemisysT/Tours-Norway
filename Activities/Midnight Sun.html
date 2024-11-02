@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Norway: Midnight Sun Adventures</title>
+    <style>
+        :root {
+            --sun-yellow: #ffd700;
+            --sun-orange: #ff8c00;
+            --sun-red: #ff4500;
+            --sun-light: #fff5e6;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sun-light);
+        }
+
+        header {
+            background: linear-gradient(to right, var(--sun-yellow), var(--sun-orange));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--sun-light);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .activity-card h2 {
+            padding: 1rem;
+            margin: 0;
+            color: var(--sun-orange);
+        }
+
+        .activity-card p {
+            padding: 0 1rem 1rem;
+        }
+
+        .read-more {
+            background-color: var(--sun-orange);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0 1rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: var(--sun-red);
+        }
+
+        .more-info {
+            display: none;
+            padding: 1rem;
+            background-color: var(--sun-light);
+            border-top: 1px solid #ddd;
+        }
+
+        footer {
+            background-color: var(--sun-orange);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-icons {
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--sun-yellow);
+        }
+
+        .norwegian-greeting {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .itim-regular {
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdKcrOLdm46GyS32E6Qrk2fhvk9vEXjQWegg&s" alt="Midnight Sun Adventures Logo">
+                <span>Midnight Sun Adventures</span>
+            </div>
+            <ul>
+                <li><a href="../hero.html">Home</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <h1 class="itim-regular">Explore Norway: Midnight Sun Adventures</h1>
+        <p class="subtitle">Experience the magic of endless daylight in the Land of the Midnight Sun</p>
+    </header>
+
+    <main id="activities">
+        <div class="activity-grid">
+            <div class="activity-card">
+                <img src="https://www.nordkapp.no/images/Midnattssol_bilde_p_Nordkapp_-_credit_Destinasjon_71.jpg" alt="North Cape">
+                <h2>North Cape Midnight Sun</h2>
+                <p>Witness the midnight sun at Europe's northernmost point.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>The North Cape offers one of the most spectacular views of the midnight sun. Standing on the 307-meter high cliff, you can watch the sun skirt the horizon without setting.</p>
+                    <ul>
+                        <li><strong>Best Time:</strong> May 14 to July 29</li>
+                        <li><strong>Location:</strong> Nordkapp, Finnmark</li>
+                        <li><strong>Activities:</strong> Photography, nature walks, visitor center</li>
+                    </ul>
+                    <p>Don't miss the opportunity to take in this awe-inspiring natural phenomenon at one of Europe's most iconic locations.</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <img src="https://blog.hole19golf.com/content/images/2022/05/image-7.png" alt="Lofoten Islands">
+                <h2>Lofoten Islands Midnight Golf</h2>
+                <p>Play a round of golf under the midnight sun in the scenic Lofoten archipelago.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>Experience the unique thrill of golfing at midnight with the sun still high in the sky. The Lofoten Links offers a spectacular 18-hole course surrounded by ocean views and rugged mountains.</p>
+                    <ul>
+                        <li><strong>Best Time:</strong> Late May to mid-July</li>
+                        <li><strong>Location:</strong> Gimsøysand, Lofoten</li>
+                        <li><strong>Activities:</strong> Golf, photography, hiking</li>
+                    </ul>
+                    <p>This once-in-a-lifetime experience combines the beauty of the Arctic landscape with the joy of golf in surreal lighting conditions.</p>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://images.citybreakcdn.com/image.aspx%3FImageId%3D9250933" alt="Midnight Sun Cruise">
+                <h2>Tromsø Midnight Sun Cruise</h2>
+                <p>Sail the Arctic waters and enjoy the midnight sun from the sea.</p>
+                <button class="read-more">Read More</button>
+                <div class="more-info">
+                    <p>Embark on a magical cruise around Tromsø, known as the "Paris of the North," and witness the midnight sun reflecting off the calm Arctic waters.</p>
+                    <ul>
+                        <li><strong>Best Time:</strong> May 20 to July 22</li>
+                        <li><strong>Duration:</strong> 3-4 hours</li>
+                        <li><strong>Activities:</strong> Sightseeing, photography, wildlife spotting</li>
+                    </ul>
+                    <p>This cruise offers a unique perspective of the midnight sun phenomenon, with opportunities to spot local wildlife and enjoy the stunning coastal scenery.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/VisitNorway" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/visitnorway" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/visitnorway" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Midnight Sun Adventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreButtons = document.querySelectorAll('.read-more');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const moreInfo = button.nextElementSibling;
+                    if (moreInfo.style.display === 'block') {
+                        moreInfo.style.display = 'none';
+                        button.textContent = 'Read More';
+                    } else {
+                        moreInfo.style.display = 'block';
+                        button.textContent = 'Read Less';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

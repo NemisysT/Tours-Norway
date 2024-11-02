@@ -14,7 +14,7 @@
     
     <nav class="main-nav">
         <div class="container">
-            <a href="#" class="logo">
+            <a href="https://cdn3.vectorstock.com/i/1000x1000/91/97/logo-for-norway-vector-21289197.jpg" class="logo">
                 <img src="https://img.freepik.com/premium-vector/norway-flag-with-original-color_967740-4195.jpg?semt=ais_hybrid" alt="Norway Flag" style="height: 50px;">
                 <span>NORWAY TOURISM</span>
             </a>
@@ -40,13 +40,13 @@
 
     <main>
         <section id="destinations" class="map-section">
-            <h2 class="section-title">Top Destinations in Norway</h2>
+            <h2 class="section-title itim-regular">Top Destinations in Norway</h2>
             <!-- Map Container -->
             <div id="map" style="height: 600px; width: 100%;"></div>
         </section>
               
         <section id="activities" class="highlights">
-            <h2 class="section-title">Popular Activities</h2>
+            <h2 class="section-title itim-regular">Popular Activities</h2>
             <style>
                 
 
@@ -104,7 +104,7 @@
         </section>
 
         <section id="cuisine" class="cuisine-section">
-            <h2 class="section-title">Norwegian Cuisine</h2>
+            <h2 class="section-title itim-regular">Norwegian Cuisine</h2>
             <div class="cuisine-container">
                 <div class="cuisine-item">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/0*3hvDUVbLWrPxve-B.jpg" alt="Kjøttkaker" />
@@ -141,9 +141,9 @@
 
         <section id="about" class="about-section">
             <div class="container">
-                <h2 class="section-title">About Norway</h2>
+                <h2 class="section-title itim-regular" id="AboutNorway">About Norway</h2>
                 <p>Norway is a Scandinavian country known for its breathtaking fjords, majestic mountains, and vibrant culture. From the bustling streets of Oslo to the serene beauty of the Arctic Circle, Norway offers unforgettable experiences for every traveler.</p>
-                <a href="#" class="cta-button">Discover More</a>
+                <a href="https://www.visitnorway.com/" class="cta-button">Discover More</a>
             </div>
         </section>
     </main>
@@ -166,7 +166,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Newsletter</h3>
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" id="newsletterForm">
                         <input type="email" placeholder="Enter your email" required>
                         <button type="submit">Subscribe</button>
                     </form>
@@ -180,6 +180,13 @@
     
 
     <script>
+
+        //NewsLetter Subscription Confirmation
+        document.getElementById("newsletterForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert("Subscribed successfully"); // Show the alert
+            this.reset(); // Optional: Clear the input field after subscribing
+        });
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -202,11 +209,23 @@
             }
         });
 
-        // Leaflet Map Initialization
+        // Initialize the Leaflet map
         const map = L.map('map').setView([64.9631, 10.3536], 5);
+        // Set up the tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+            }).addTo(map);
+        // Disable scroll zoom initially
+        map.scrollWheelZoom.disable();
+        // Enable scroll zoom on map click
+        map.on('click', function() {
+            map.scrollWheelZoom.enable();
+        });
+        // Optional: Disable scroll zoom again when clicking outside the map
+        map.on('mouseout', function() {
+        map.scrollWheelZoom.disable();
+        });
+
 
         // Array of Destinations
         const destinations = [
