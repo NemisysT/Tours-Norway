@@ -156,6 +156,14 @@
     color: #333; /* Slightly darker color for list items */
     font-weight: 500; /* Make list items bold */
 }
+footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
 
 
         @media (max-width: 768px) {
@@ -188,6 +196,10 @@
         <section class="festival-details" id="festival-details"></section>
         <div id="map" style="display: none;"></div>
         <button class="close-map" id="close-map" style="display: none;">Close Map</button>
+        <footer>
+            <p>&copy; 2024 Discover Norwegian Literature and Arts. All rights reserved.</p>
+            <a href="../index.html" style="color: White;">Return to Home</a>
+        </footer>
     </main>
     <script>
         const festivals = [
