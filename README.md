@@ -1,5 +1,3 @@
----
-
 # About Tours-Norway
 
 ## Overview
@@ -25,5 +23,3 @@ Our mission is to promote Norway as a premier travel destination by highlighting
 - Pavana H G - 1DS23CS150
 - Nithin Naik - 1DS23CS145
 - Manoj Patel R - 1DS23CS130
-
----
