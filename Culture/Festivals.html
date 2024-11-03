@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norwegian Festivals Calendar and Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #00205B;
+            --secondary-color: #BA0C2F;
+            --accent-color: #F1C40F;
+            --text-color: #333;
+            --background-color: #F0F8FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .festival-calendar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .month {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            width: calc(33.333% - 1rem);
+            margin-bottom: 1rem;
+        }
+
+        .month h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .festival-list {
+            list-style-type: none;
+        }
+
+        .festival-item {
+            background-color: var(--accent-color);
+            border-radius: 5px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .festival-item:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .festival-details {
+            display: none;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .festival-details h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .festival-details p {
+            margin-bottom: 0.5rem;
+        }
+
+        #map {
+            height: 400px;
+            margin-top: 1rem;
+        }
+
+        .close-map {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .intro {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px; /* Add padding for breathing space */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 20px auto; /* Center the section with margin */
+}
+
+.intro h2 {
+    font-size: 2em; /* Larger font size for the header */
+    color: #3a3a3a; /* Dark gray color for contrast */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+.intro p {
+    line-height: 1.6; /* Improve readability with line height */
+    color: #555; /* Darker gray for text */
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.intro ul {
+    list-style-type: disc; /* Default bullet points */
+    padding-left: 20px; /* Indent list */
+}
+
+.intro li {
+    margin-bottom: 10px; /* Space between list items */
+    color: #333; /* Slightly darker color for list items */
+    font-weight: 500; /* Make list items bold */
+}
+footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+
+        @media (max-width: 768px) {
+            .month {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Norwegian Festivals Calendar and Map</h1>
+        <p>Explore the vibrant celebrations across Norway throughout the year</p>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Welcome to Norwegian Festivals</h2>
+            <p>Norway, a land of breathtaking natural beauty and rich cultural heritage, hosts a diverse array of festivals throughout the year. From traditional celebrations to contemporary arts events, these festivals showcase the best of Norwegian culture, music, film, and cuisine.</p>
+            <p>Experience the vibrant spirit of Norway as you explore:</p>
+            <ul>
+                <li><strong>Music Festivals:</strong> Enjoy live performances from local and international artists in stunning outdoor settings.</li>
+                <li><strong>Art Exhibitions:</strong> Discover unique works from talented Norwegian artists and immerse yourself in the creative community.</li>
+                <li><strong>Culinary Events:</strong> Savor traditional dishes and innovative cuisine at food festivals celebrating Norway’s rich culinary heritage.</li>
+                <li><strong>Cultural Celebrations:</strong> Participate in lively parades, traditional dances, and folk music performances that bring communities together.</li>
+            </ul>
+            <p>Our interactive calendar and map allow you to explore these exciting events and plan your Norwegian cultural journey. Whether you’re a local or a traveler, there’s always something happening to inspire your adventure!</p>
+        </section>
+        
+        <section class="festival-calendar" id="festival-calendar"></section>
+        <section class="festival-details" id="festival-details"></section>
+        <div id="map" style="display: none;"></div>
+        <button class="close-map" id="close-map" style="display: none;">Close Map</button>
+        <footer>
+            <p>&copy; 2024 Discover Norwegian Literature and Arts. All rights reserved.</p>
+            <a href="../index.html" style="color: White;">Return to Home</a>
+        </footer>
+    </main>
+    <script>
+        const festivals = [
+            { name: "St. Olav Festival", date: "29-07", description: "Celebrating the life of Norway's patron saint, this festival includes music, art, and various cultural activities in Trondheim.", location: "Trondheim", coords: [63.4305, 10.3951] },
+            { name: "Norwegian Festival of Literature", date: "25-05", description: "A prominent literary festival held in Lillehammer, featuring discussions, readings, and workshops with renowned authors and poets.", location: "Lillehammer", coords: [61.1151, 10.4572] },
+            { name: "Nobel Peace Prize Concert", date: "11-12", description: "An annual concert held in Oslo to honor the Nobel Peace Prize laureates, featuring performances by world-renowned artists.", location: "Oslo", coords: [59.9139, 10.7522] },
+            { name: "Rjukan Waterfall Festival", date: "25-03", description: "Celebrating the stunning natural beauty of the Rjukan Waterfall with outdoor activities, music, and local food.", location: "Rjukan", coords: [59.8833, 8.6080] },
+            { name: "Nidaros Blues Festival", date: "10-05", description: "A festival dedicated to blues music, featuring both Norwegian and international artists in a cozy atmosphere.", location: "Trondheim", coords: [63.4305, 10.3951] },
+            { name: "Borealis Festival", date: "14-03", description: "A contemporary music festival that explores new and innovative sounds through concerts, workshops, and artist talks.", location: "Bergen", coords: [60.3913, 5.3221] },
+            { name: "Viking Festival", date: "05-06", description: "A lively festival celebrating Viking history and culture, with reenactments, markets, and traditional music.", location: "Gudvangen", coords: [60.6418, 7.0770] },
+            { name: "Døla Jazz Festival", date: "23-04", description: "A jazz festival featuring both local and international jazz artists, workshops, and jam sessions.", location: "Døla", coords: [62.0581, 9.5652] },
+            { name: "Tromsø International Film Festival", date: "2024-01-15", description: "Held in the Arctic city of Tromsø, this festival showcases a wide range of international and Norwegian films. It's known for its unique 'Films from the North' program and screenings in unusual locations like ice hotels.", location: "Tromsø", coords: [69.6492, 18.9553] },
+            { name: "Sami National Day Celebrations", date: "2024-02-06", description: "This day marks the first Sami National Convention in 1917. Celebrations include traditional Sami music (joik), handicrafts, and reindeer races. Major events are held in Tromsø and other northern cities.", location: "Various locations in Northern Norway", coords: [69.6492, 18.9553] },
+            { name: "Holmenkollen Ski Festival", date: "2024-03-08", description: "One of the oldest ski tournaments in the world, featuring cross-country skiing, ski jumping, and Nordic combined events. The festival attracts top athletes and thousands of spectators.", location: "Oslo", coords: [59.9639, 10.6686] },
+            { name: "Bergen International Festival", date: "2024-05-22", description: "Norway's largest festival for music, dance, literature, visual arts, and theatre. It features both Norwegian and international artists, with performances held in various venues across Bergen.", location: "Bergen", coords: [60.3913, 5.3221] },
+            { name: "Norwegian Wood", date: "2024-06-14", description: "A popular rock music festival held in Oslo's Frogner Park. It attracts both established international acts and emerging Norwegian talent.", location: "Oslo", coords: [59.9139, 10.7522] },
+            { name: "Riddu Riđđu Festival", date: "2024-07-10", description: "An international indigenous festival celebrating Sami and other indigenous cultures. It features music, art, film, theatre, and workshops focusing on indigenous issues and culture.", location: "Kåfjord, Troms", coords: [69.4111, 20.9780] },
+            { name: "Øya Festival", date: "2024-08-06", description: "One of the largest music festivals in Norway, held in Oslo's Tøyen Park. It showcases a mix of Norwegian and international artists across various genres.", location: "Oslo", coords: [59.9139, 10.7522] },
+            { name: "Ultima Oslo Contemporary Music Festival", date: "2024-09-12", description: "Scandinavia's premier contemporary music festival, featuring experimental works, sound art, and multimedia performances from both established and emerging artists.", location: "Oslo", coords: [59.9139, 10.7522] },
+            { name: "Rakfisk Festival", date: "2024-11-07", description: "A celebration of rakfisk, a traditional Norwegian fish dish. The festival in Valdres includes tastings, competitions, and cultural events centered around this unique culinary tradition.", location: "Valdres", coords: [61.1315, 8.9493] },
+            { name: "Bergen Gingerbread Town", date: "2024-11-16", description: "The world's largest gingerbread city exhibition, featuring miniature replicas of Bergen's buildings made entirely of gingerbread. It's a beloved pre-Christmas tradition in Bergen.", location: "Bergen", coords: [60.3913, 5.3221] },
+            { name: "Oslo Christmas Market", date: "2024-12-01", description: "A traditional Christmas market held in Oslo's city center, featuring local crafts, food, and festive activities. It's a perfect place to experience Norwegian Christmas traditions.", location: "Oslo", coords: [59.9139, 10.7522] }
+        ];
+
+        const calendarElement = document.getElementById('festival-calendar');
+        const detailsElement = document.getElementById('festival-details');
+        const mapElement = document.getElementById('map');
+        const closeMapButton = document.getElementById('close-map');
+        let map;
+
+        function createCalendar() {
+            const months = Array.from({ length: 12 }, (_, i) => new Date(2024, i).toLocaleString('default', { month: 'long' }));
+            
+            months.forEach(month => {
+                const monthElement = document.createElement('div');
+                monthElement.classList.add('month');
+                monthElement.innerHTML = `<h2>${month}</h2>`;
+                
+                const festivalList = document.createElement('ul');
+                festivalList.classList.add('festival-list');
+                
+                const monthFestivals = festivals.filter(festival => new Date(festival.date).toLocaleString('default', { month: 'long' }) === month);
+                
+                monthFestivals.forEach(festival => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('festival-item');
+                    listItem.textContent = `${new Date(festival.date).getDate()} - ${festival.name}`;
+                    listItem.addEventListener('click', () => showFestivalDetails(festival));
+                    festivalList.appendChild(listItem);
+                });
+                
+                monthElement.appendChild(festivalList);
+                calendarElement.appendChild(monthElement);
+            });
+        }
+
+        function showFestivalDetails(festival) {
+            detailsElement.style.display = 'block';
+            detailsElement.innerHTML = `
+                <h3>${festival.name}</h3>
+                <p><strong>Date:</strong> ${new Date(festival.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p><strong>Location:</strong> ${festival.location}</p>
+                <p>${festival.description}</p>
+            `;
+            showMap(festival);
+            detailsElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showMap(festival) {
+            mapElement.style.display = 'block';
+            closeMapButton.style.display = 'block';
+
+            if (!map) {
+                map = L.map('map').setView(festival.coords, 8);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+            } else {
+                map.setView(festival.coords, 8);
+            }
+
+            L.marker(festival.coords).addTo(map)
+                .bindPopup(`<b>${festival.name}</b><br>${festival.location}`)
+                .openPopup();
+
+            map.scrollWheelZoom.disable();
+            map.on('click', function() {
+                map.scrollWheelZoom.enable();
+            });
+            map.on('mouseout', function() {
+                map.scrollWheelZoom.disable();
+            });
+        }
+
+        closeMapButton.addEventListener('click', function() {
+            mapElement.style.display = 'none';
+            closeMapButton.style.display = 'none';
+        });
+
+        createCalendar();
+    </script>
+</body>
+</html>

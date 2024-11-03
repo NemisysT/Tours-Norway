@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Sami Culture and Traditions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #0B3D91;
+            --secondary-color: #FF4500;
+            --accent-color: #FFD700;
+            --text-color: #333;
+            --background-color: #F0F8FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+
+        .parallax-container {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 1px;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .parallax-background {
+            transform: translateZ(-1px) scale(2);
+            background: url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        header {
+            background-color: rgba(11, 61, 145, 0.9);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            background: white;
+            margin: 3rem auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -0.2em;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: var(--primary-color); }
+            50% { color: var(--secondary-color); }
+            100% { color: var(--primary-color); }
+        }
+
+        .color-change {
+            animation: colorChange 4s infinite;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            section { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax-container">
+        <div class="parallax-layer parallax-background"></div>
+        <div class="parallax-layer">
+            <header>
+                <h1 class="floating">Explore Sami Culture</h1>
+                <nav>
+                    <a href="#introduction">Introduction</a>
+                    <a href="#customs">Customs</a>
+                    <a href="#food">Food</a>
+                    <a href="#clothing">Clothing</a>
+                    <a href="#nature">Nature</a>
+                </nav>
+            </header>
+
+            <section id="introduction">
+                <h2 class="color-change">Welcome to Sápmi</h2>
+                <p>Sápmi, the cultural region traditionally inhabited by the Sami people, spans across northern Scandinavia and the Kola Peninsula. The Sami, Europe's northernmost indigenous people, have a rich culture deeply connected to the Arctic landscape, reindeer herding, and ancient traditions.</p>
+                <div class="gallery">
+                    <img src="https://lighthouse.mq.edu.au/__data/assets/image/0019/1110457/Sami-reindeer-herder,-Finland-tile-700x400.jpg" alt="Sami Reindeer Herder">
+                    <img src="https://aurora-nights.co.uk/wp-content/uploads/2023/12/tromso-northern-sami.jpg.webp" alt="Northern Lights over Sápmi">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Saami_Family_1900.jpg" alt="Traditional Sami Lavvu">
+                </div>
+            </section>
+
+            <section id="customs">
+                <h2 class="color-change">Sami Traditions</h2>
+                <p>Sami customs are deeply rooted in their connection to nature and community. Some notable traditions include:</p>
+                <ul>
+                    <li><strong>Joik:</strong> A traditional form of song that's used to evoke people, animals, or places.</li>
+                    <li><strong>Duodji:</strong> Traditional Sami handicraft, including clothing, tools, and decorative items.</li>
+                    <li><strong>Reindeer Herding:</strong> An ancient practice that's central to Sami culture and economy.</li>
+                </ul>
+                <div class="gallery">
+                    <img src="https://i.vimeocdn.com/video/1169000854-4c1bd03e028935bf497c39146b4d76d212d2f1fb2524c610b74573fdd4f88e75-d_640" alt="Sami Joik Performance">
+                    <img src="https://static01.nyt.com/images/2018/12/17/world/europe/xxsami-visual-slide-7LYL/xxsami-visual-slide-7LYL-superJumbo.jpg" alt="Reindeer Herd in Sápmi">
+                </div>
+            </section>
+
+            <section id="food">
+                <h2 class="color-change">Sami Cuisine</h2>
+                <p>Sami cuisine is characterized by its use of local ingredients from the Arctic environment. Some traditional dishes include:</p>
+                <ul>
+                    <li><strong>Bidos:</strong> A hearty reindeer stew with potatoes and other vegetables.</li>
+                    <li><strong>Gáhkko:</strong> A traditional flatbread often served with reindeer meat or fish.</li>
+                    <li><strong>Suovas:</strong> Smoked reindeer meat, often served with bread or potatoes.</li>
+                    <li><strong>Cloudberries:</strong> A prized Arctic berry used in desserts and preserves.</li>
+                </ul>
+                <div class="gallery">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0z-ua3zXCqg7hLZGZEqJAuoaQ08ZI8n1e2w&s" alt="Traditional Sami Meal">
+                    <img src="https://lh4.googleusercontent.com/75DnDCPbGvJgNxB3ZY7uWrJwDMjin-NVj9NwDyHL5u1ZuBl1tf2T0QjEYBaeMLAWLvFFmpD81QrBeL80cw1OXiWCWYdY3vHB2F1Hm2rPeryeloLEwm-2vOp4PeT9cNpJw2zePSwg" alt="Cloudberries">
+                </div>
+            </section>
+
+            <section id="clothing">
+                <h2 class="color-change">Traditional Sami Attire</h2>
+                <p>The Sami gákti, or traditional costume, is a vibrant expression of Sami identity. Each region has its unique design, with colors and patterns that reflect local traditions. The gákti is worn during special occasions and festivals.</p>
+                <div class="gallery">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKmWUp54p28kbsAKjUjWAF9PqFJr7KLR_7hD9tlFXF5OgK8CqbpXuwujjDubFPt-WNKP4FtXOhAJH-KQxOq3Uqibi9GYBbyWMcVM44KyOxqKui8gGclw_-3ji2s1ErKnBjU7JkZ5_Kob0/s1600/Image32.jpg" alt="Sami Gákti">
+                    <img src="https://avikinginla.com/wp-content/uploads/2022/02/Sami-Week-Reindeer-Race-1024x536.jpeg" alt="Sami Festival Celebration">
+                </div>
+            </section>
+
+            <section id="nature">
+                <h2 class="color-change">Sápmi's Natural Wonders</h2>
+                <p>The Sami homeland is characterized by stunning Arctic landscapes:</p>
+                <ul>
+                    <li><strong>Midnight Sun:</strong> Continuous daylight during summer months.</li>
+                    <li><strong>Northern Lights:</strong> Spectacular light displays in the winter sky.</li>
+                    <li><strong>Tundra:</strong> Vast expanses of Arctic vegetation and wildlife.</li>
+                </ul>
+                <div class="gallery">
+                    <img src="https://scontent.fblr2-2.fna.fbcdn.net/v/t1.6435-9/100793379_10158402493201550_3260813044560691200_n.jpg?stp=dst-jpg_s960x960&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=j8JofnEHEXEQ7kNvgHfK_8U&_nc_zt=23&_nc_ht=scontent.fblr2-2.fna&_nc_gid=AOOMqppLVv2JY4JvcUfZvlq&oh=00_AYCXW_3YFyqtQ8Ek5Pdq_LJb_wc-5fY4Kcjfj-lzy8Eztg&oe=674E4718" alt="Midnight Sun in Sápmi">
+                    <img src="https://img.peapix.com/a7d3a084cc3849f6816854d7f0c213e7_480.jpg" alt="Tundra in Norway">
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; 2024 Discover Sami Culture and Traditions. All rights reserved.</p>
+                <a href="../index.html" style="color: White;">Return to Home</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-background');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for fade-in effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
