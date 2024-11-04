@@ -283,7 +283,7 @@
         async function fetchWeather() {
             try {
                 // Step 1: Fetch latitude and longitude for Geirangerfjord
-                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Ålesund,,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
+                const geoResponse = await fetch('https://api.openweathermap.org/geo/1.0/direct?q=Ålesund,,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
                 if (!geoResponse.ok) {
                     throw new Error('Network response was not ok: ' + geoResponse.statusText);
                 }
