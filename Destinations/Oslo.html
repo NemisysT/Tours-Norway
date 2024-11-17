@@ -306,7 +306,7 @@
                 <div class="weather-location" id="location">Ålesund, Norway</div>
             </div>
 
-            <!-- Dynamic Component 1: Cultural Landmarks -->
+            
             <div class="cultural-landmarks">
                 <div class="landmarks">
                     <h3>Must-Visit Landmarks in Oslo</h3>
@@ -328,7 +328,7 @@
                 <img src="https://www.campervannorway.com/assets/img/blog/514.png" alt="Royal Palace" style="width:100%; border-radius: 10px;">
             </div>
 
-            <!-- Dynamic Component 2: Outdoor Activities Section -->
+           
             <div class="outdoor-activities-section">
                 <div class="outdoor-activities">
                     <h3>Outdoor Adventures in Oslo</h3>
@@ -359,7 +359,7 @@
     <script>
         async function fetchWeather() {
             try {
-                // Step 1: Fetch latitude and longitude for Ålesund
+                
                 const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Oslo,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
                 if (!geoResponse.ok) {
                     throw new Error('Network response was not ok: ' + geoResponse.statusText);
@@ -371,21 +371,21 @@
     
                 const { lat, lon } = geoData[0];
     
-                // Step 2: Fetch weather data using latitude and longitude
+                
                 const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
                 if (!weatherResponse.ok) {
                     throw new Error('Network response was not ok: ' + weatherResponse.statusText);
                 }
                 const weatherData = await weatherResponse.json();
     
-                // Update weather widget with data
+                
                 document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
                 document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
                 document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
                 document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
                 document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
     
-                // Weather icons based on weather conditions
+                
                 const weatherCondition = weatherData.weather[0].main;
                 const weatherIcons = {
                     'Clear': '☀️',
@@ -399,7 +399,7 @@
                 document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
             } catch (error) {
                 console.error('Error fetching weather data:', error);
-                // Update the UI to show an error message
+                
                 document.getElementById('temperature').textContent = 'Error fetching data';
                 document.getElementById('humidity').textContent = '';
                 document.getElementById('wind').textContent = '';

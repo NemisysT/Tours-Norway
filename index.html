@@ -18,7 +18,7 @@
                 <img src="https://img.freepik.com/premium-vector/norway-flag-with-original-color_967740-4195.jpg?semt=ais_hybrid" alt="Norway Flag" style="height: 50px;">
                 <span>NORWAY TOURISM</span>
             </a>
-            <div class="menu-icon">&#9776;</div> <!-- Hamburger icon for mobile -->
+            <div class="menu-icon">&#9776;</div> 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#destinations">Destinations</a></li>
@@ -42,7 +42,7 @@
     <main>
         <section id="destinations" class="map-section">
             <h2 class="section-title itim-regular">Top Destinations in Norway</h2>
-            <!-- Map Container -->
+            
             <div id="map" style="height: 600px; width: 100%;"></div>
         </section>
               
@@ -188,10 +188,10 @@
 
     <footer id="contact">
         <div class="container">
-            <!-- Grid Layout for Footer Sections -->
+            
             <div class="footer-grid">
                 
-                <!-- Contact Us Section -->
+                
                 <div class="footer-section contact-section">
                     <h3>Get in Touch</h3>
                     <ul>
@@ -206,7 +206,7 @@
                     </ul>
                 </div>
                 
-                <!-- Social Media Section -->
+                
                 <div class="footer-section social-section">
                     <h3>Connect with Us</h3>
                     <div class="social-icons">
@@ -225,7 +225,7 @@
                     </div>
                 </div>
                 
-                <!-- Newsletter Section -->
+                
                 <div class="footer-section newsletter-section">
                     <h3>Stay Updated</h3>
                     <form class="newsletter-form" id="newsletterForm">
@@ -237,7 +237,7 @@
                 
             </div>
             
-            <!-- Bottom Section for Legal Text -->
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 Norway Tourism. All rights reserved.</p>
             </div>
@@ -250,13 +250,13 @@
 
     <script>
 
-        //NewsLetter Subscription Confirmation
+        
         document.getElementById("newsletterForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            alert("Subscribed successfully"); // Show the alert
-            this.reset(); // Optional: Clear the input field after subscribing
+            event.preventDefault(); 
+            alert("Subscribed successfully"); 
+            this.reset(); 
         });
-        // Smooth scrolling for navigation links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -266,7 +266,7 @@
             });
         });
 
-        // Navbar scroll-hide functionality
+        
         let lastScrollTop = 0;
         const navbar = document.querySelector('.main-nav');
 
@@ -278,25 +278,25 @@
             }
         });
 
-        // Initialize the Leaflet map
+        
         const map = L.map('map').setView([64.9631, 10.3536], 5);
-        // Set up the tile layer
+        
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-        // Disable scroll zoom initially
+        
         map.scrollWheelZoom.disable();
-        // Enable scroll zoom on map click
+        
         map.on('click', function() {
             map.scrollWheelZoom.enable();
         });
-        // Optional: Disable scroll zoom again when clicking outside the map
+        
         map.on('mouseout', function() {
         map.scrollWheelZoom.disable();
         });
 
 
-        // Array of Destinations
+        //Destinations
         const destinations = [
     { name: "Geirangerfjord", description: "UNESCO World Heritage Site", url: "./Destinations/Geirangerfjord.html", coords: [62.1049, 7.0807] },
     { name: "Trolltunga", description: "Stunning cliff rock formation", url: "./Destinations/Trolltunga.html", coords: [60.1240, 6.7382] },
@@ -309,7 +309,7 @@
 ];
 
 
-        // Adding Markers for each Destination
+        
         destinations.forEach(dest => {
             const marker = L.marker(dest.coords).addTo(map);
             marker.bindPopup(`<b>${dest.name}</b><br>${dest.description}<br><a href="${dest.url}" target="_blank">Learn More</a>`);

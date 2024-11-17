@@ -1,554 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Discover Tromsø in Norway</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a0a2a;
-            color: #fff;
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0a0a2a;
+        color: #fff;
+        line-height: 1.6;
+      }
 
-        header {
-            background-color: #1a1a4a;
-            color: #7cffcb;
-            text-align: center;
-            padding: 2rem;
-            border-bottom: 3px solid #7cffcb;
-        }
+      header {
+        background-color: #1a1a4a;
+        color: #7cffcb;
+        text-align: center;
+        padding: 2rem;
+        border-bottom: 3px solid #7cffcb;
+      }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
 
-        .hero {
-            position: relative;
-            height: 60vh;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
+      .hero {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
 
-        .hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(70%);
-        }
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(70%);
+      }
 
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
 
-        .hero-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+      .hero-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
 
-        .hero-text p {
-            font-size: 1.2rem;
-        }
+      .hero-text p {
+        font-size: 1.2rem;
+      }
 
-        .image-gallery {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-        }
+      .image-gallery {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
 
-        .image-gallery img {
-            width: 32%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+      .image-gallery img {
+        width: 32%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
 
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
+      .image-gallery img:hover {
+        transform: scale(1.05);
+      }
 
-        .activities {
-            background-color: rgba(74, 26, 74, 0.9);
-            color: #7cffcb;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+      .activities {
+        background-color: rgba(74, 26, 74, 0.9);
+        color: #7cffcb;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
 
-        .activities h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
+      .activities h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
 
-        .activities ul {
-            list-style-type: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
+      .activities ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
 
-        .activities li {
-            background-color: #6a2a6a;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
+      .activities li {
+        background-color: #6a2a6a;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
 
-        .activities li:hover {
-            background-color: #8a3a8a;
-            transform: translateY(-3px);
-        }
+      .activities li:hover {
+        background-color: #8a3a8a;
+        transform: translateY(-3px);
+      }
 
-        .weather-widget {
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-            font-family: 'Poppins', sans-serif;
-        }
+      .weather-widget {
+        background: linear-gradient(135deg, #6dd5ed, #2193b0);
+        color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        font-family: "Poppins", sans-serif;
+      }
 
-        .weather-widget h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
+      .weather-widget h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
 
-        .weather-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .weather-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .weather-main {
-            display: flex;
-            align-items: center;
-        }
+      .weather-main {
+        display: flex;
+        align-items: center;
+      }
 
-        .weather-icon {
-            font-size: 4rem;
-            margin-right: 1rem;
-        }
+      .weather-icon {
+        font-size: 4rem;
+        margin-right: 1rem;
+      }
 
-        .temperature {
-            font-size: 3rem;
-            font-weight: bold;
-        }
+      .temperature {
+        font-size: 3rem;
+        font-weight: bold;
+      }
 
-        .weather-details {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+      .weather-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
 
-        .weather-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
+      .weather-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
 
-        .weather-detail-icon {
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
+      .weather-detail-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
 
-        .weather-detail-text {
-            font-size: 1rem;
-        }
+      .weather-detail-text {
+        font-size: 1rem;
+      }
 
-        .weather-location {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
+      .weather-location {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
 
-        footer {
-            background-color: #1a1a4a;
-            color: #7cffcb;
-            text-align: center;
-            padding: 1rem;
-            border-top: 3px solid #7cffcb;
-        }
+      footer {
+        background-color: #1a1a4a;
+        color: #7cffcb;
+        text-align: center;
+        padding: 1rem;
+        border-top: 3px solid #7cffcb;
+      }
 
-        /* Dynamic Component 1: Aurora Animation */
-        .aurora-animation {
-            position: relative;
-            height: 100vh; /* Ensure this takes full viewport height */
-            overflow: hidden;
-            margin-bottom: 0;
-            border-radius: 10px;
-        }
+      .aurora-animation {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        margin-bottom: 0;
+        border-radius: 10px;
+      }
 
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This will cover the entire area without stretching */
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            z-index: -1; /* Ensures the video stays in the background */
-        }
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
 
-        /* Dynamic Component 2: Accordion */
-        @keyframes gradientAnimation {
+      @keyframes gradientAnimation {
         0% {
-            background-color: #007BFF; /* Start with blue */
+          background-color: #007bff;
         }
         50% {
-            background-color: #00BFFF; /* Transition to light blue */
+          background-color: #00bfff;
         }
         100% {
-            background-color: #007BFF; /* Transition back to blue */
+          background-color: #007bff;
         }
-    }
+      }
 
-    .accordion {
-        border: 1px solid #007BFF; /* Light blue border */
+      .accordion {
+        border: 1px solid #007bff;
         border-radius: 8px;
         padding: 16px;
-        width: 100%; 
-        max-width: 800px; /* Increased maximum width */
-        margin: 20px auto; /* Center it on the page */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        animation: gradientAnimation 3s ease infinite; /* Apply gradient animation */
-    }
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: gradientAnimation 3s ease infinite;
+      }
 
-    .accordion h3 {
+      .accordion h3 {
         text-align: center;
-        color: white; /* Header color */
-        margin-bottom: 20px; /* Space below header */
-    }
+        color: white;
+        margin-bottom: 20px;
+      }
 
-    .accordion-item {
-        margin: 10px 0; /* Space between items */
-    }
+      .accordion-item {
+        margin: 10px 0;
+      }
 
-    .accordion-header {
-        background-color: rgba(255, 255, 255, 0.8); /* Light background for header */
-        color: #007BFF; /* Text color */
+      .accordion-header {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #007bff;
         padding: 10px;
         cursor: pointer;
         border-radius: 5px;
         transition: background-color 0.3s;
-        font-weight: bold; /* Bold text */
-    }
+        font-weight: bold;
+      }
 
-    .accordion-header:hover {
-        background-color: rgba(255, 255, 255, 0.9); /* Slightly darker on hover */
-    }
+      .accordion-header:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
 
-    .accordion-content {
-        display: none; /* Initially hide content */
+      .accordion-content {
+        display: none;
         padding: 10px;
-        border: 1px solid #007BFF; /* Border matching header color */
+        border: 1px solid #007bff;
         border-radius: 5px;
-        background-color: #e7f1ff; /* Light blue background */
-        margin-top: 5px; /* Space above content */
-        color: #333; /* Text color */
-    }
+        background-color: #e7f1ff;
+        margin-top: 5px;
+        color: #333;
+      }
 
-        /* Dynamic Component 3: Best Viewing Locations */
-        .viewing-locations {
-            background-color: rgba(26, 58, 74, 0.9);
-            color: #7cffcb;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+     
+      .viewing-locations {
+        background-color: rgba(26, 58, 74, 0.9);
+        color: #7cffcb;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
 
-        .viewing-locations h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+      .viewing-locations h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
 
-        .location-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-        }
+      .location-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
 
-        .location-item {
-            background-color: #2a4a5a;
-            padding: 1rem;
-            border-radius: 5px;
-            text-align: center;
-            width: calc(33.33% - 1rem);
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+      .location-item {
+        background-color: #2a4a5a;
+        padding: 1rem;
+        border-radius: 5px;
+        text-align: center;
+        width: calc(33.33% - 1rem);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
 
-        .location-item:hover {
-            transform: translateY(-5px);
-        }
+      .location-item:hover {
+        transform: translateY(-5px);
+      }
 
-        .location-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 0.5rem;
-        }
+      .location-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+      }
 
-        .location-item h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
+      .location-item h4 {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Discover Tromsø in Norway</h1>
-        <p>Experience the beauty and adventure of the Arctic</p>
+      <h1>Discover Tromsø in Norway</h1>
+      <p>Experience the beauty and adventure of the Arctic</p>
     </header>
 
     <div class="container">
-        <div class="hero">
-            <img src="https://girtbyseaphotography.com/wp-content/uploads/2020/02/A7RII-10491-Blog-2760px-scaled.jpg" alt="Tromsø Landscape">
-            <div class="hero-text">
-                <h2>Welcome to Tromsø, the Gateway to the Arctic</h2>
-                <p>Explore the vibrant culture and breathtaking landscapes</p>
+      <div class="hero">
+        <img
+          src="https://girtbyseaphotography.com/wp-content/uploads/2020/02/A7RII-10491-Blog-2760px-scaled.jpg"
+          alt="Tromsø Landscape"
+        />
+        <div class="hero-text">
+          <h2>Welcome to Tromsø, the Gateway to the Arctic</h2>
+          <p>Explore the vibrant culture and breathtaking landscapes</p>
+        </div>
+      </div>
+
+      <div class="image-gallery">
+        <img src="https://i.redd.it/4s4cd77gbof91.jpg" alt="Tromsø by night" />
+        <img
+          src="https://www.photohound.co/images/1025021l.jpg"
+          alt="Tromsø city view"
+        />
+        <img
+          src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/30/22/4c.jpg"
+          alt="Tromsø fjord"
+        />
+      </div>
+
+      <div class="activities">
+        <h3>Top Activities in Tromsø</h3>
+        <ul>
+          <li>Dog Sledding</li>
+          <li>Whale Watching</li>
+          <li>Visit the Arctic Cathedral</li>
+          <li>Explore the Polar Museum</li>
+          <li>Experience the Midnight Sun</li>
+        </ul>
+      </div>
+
+      <div
+        class="weather-widget"
+        style="
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 16px;
+          background-color: #f9f9f9;
+        "
+      >
+        <h3 style="text-align: center; color: #333">Current Weather</h3>
+        <div
+          class="weather-info"
+          style="display: flex; flex-direction: column; align-items: center"
+        >
+          <div
+            class="weather-main"
+            style="
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              font-size: 2em;
+              margin-bottom: 10px;
+            "
+          >
+            <div class="temperature" id="temperature">12°C</div>
+            <div
+              class="weather-icon"
+              id="weatherIcon"
+              style="display: inline-block; margin-left: 10px"
+            >
+              🌦️
             </div>
-        </div>
-
-        <div class="image-gallery">
-            <img src="https://i.redd.it/4s4cd77gbof91.jpg" alt="Tromsø by night">
-            <img src="https://www.photohound.co/images/1025021l.jpg" alt="Tromsø city view">
-            <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/30/22/4c.jpg" alt="Tromsø fjord">
-        </div>
-
-        <div class="activities">
-            <h3>Top Activities in Tromsø</h3>
-            <ul>
-                <li>Dog Sledding</li>
-                <li>Whale Watching</li>
-                <li>Visit the Arctic Cathedral</li>
-                <li>Explore the Polar Museum</li>
-                <li>Experience the Midnight Sun</li>
-            </ul>
-        </div>
-
-        <div class="weather-widget" style="border: 1px solid #ccc; border-radius: 8px; padding: 16px; background-color: #f9f9f9;">
-            <h3 style="text-align: center; color: #333;">Current Weather</h3>
-            <div class="weather-info" style="display: flex; flex-direction: column; align-items: center;">
-                <div class="weather-main" style="display: flex; justify-content: space-between; width: 100%; font-size: 2em; margin-bottom: 10px;">
-                    <div class="temperature" id="temperature">12°C</div>
-                    <div class="weather-icon" id="weatherIcon" style="display: inline-block; margin-left: 10px;">🌦️</div>
-                </div>
-                <div class="weather-details" style="text-align: left; width: 100%;">
-                    <div class="weather-detail" style="display: flex; align-items: center; margin: 5px 0;">
-                        <span class="weather-detail-icon" style="margin-right: 5px;">💧</span>
-                        <span class="weather-detail-text" id="humidity">70% Humidity</span>
-                    </div>
-                    <div class="weather-detail" style="display: flex; align-items: center; margin: 5px 0;">
-                        <span class="weather-detail-icon" style="margin-right: 5px;">💨</span>
-                        <span class="weather-detail-text" id="wind">15 km/h Wind</span>
-                    </div>
-                    <div class="weather-detail" style="display: flex; align-items: center; margin: 5px 0;">
-                        <span class="weather-detail-icon" style="margin-right: 5px;">🌡️</span>
-                        <span class="weather-detail-text" id="feelsLike">Feels like 10°C</span>
-                    </div>
-                </div>
+          </div>
+          <div class="weather-details" style="text-align: left; width: 100%">
+            <div
+              class="weather-detail"
+              style="display: flex; align-items: center; margin: 5px 0"
+            >
+              <span class="weather-detail-icon" style="margin-right: 5px"
+                >💧</span
+              >
+              <span class="weather-detail-text" id="humidity"
+                >70% Humidity</span
+              >
             </div>
-            <div class="weather-location" id="location" style="text-align: center; font-weight: bold; margin-top: 10px;">Tromsø, Norway</div>
-            
-            <div class="weather-detail" style="display: flex; align-items: center; justify-content: center; margin: 5px 0; margin-top: 10px;">
-                <span class="weather-detail-icon" style="margin-right: 5px;">👁️</span>
-                <span class="weather-detail-text" id="visibility">Visibility: 10 km</span>
+            <div
+              class="weather-detail"
+              style="display: flex; align-items: center; margin: 5px 0"
+            >
+              <span class="weather-detail-icon" style="margin-right: 5px"
+                >💨</span
+              >
+              <span class="weather-detail-text" id="wind">15 km/h Wind</span>
             </div>
-            <div class="visibility-message" id="visibilityMessage" style="text-align: center; font-weight: bold; color: green; margin-top: 5px;">Good visibility for Northern Lights!</div>
+            <div
+              class="weather-detail"
+              style="display: flex; align-items: center; margin: 5px 0"
+            >
+              <span class="weather-detail-icon" style="margin-right: 5px"
+                >🌡️</span
+              >
+              <span class="weather-detail-text" id="feelsLike"
+                >Feels like 10°C</span
+              >
+            </div>
+          </div>
         </div>
-        
-        
-        
-        
+        <div
+          class="weather-location"
+          id="location"
+          style="text-align: center; font-weight: bold; margin-top: 10px"
+        >
+          Tromsø, Norway
+        </div>
 
-        <!-- Dynamic Component 1: FAQ -->
+        <div
+          class="weather-detail"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+            margin-top: 10px;
+          "
+        >
+          <span class="weather-detail-icon" style="margin-right: 5px">👁️</span>
+          <span class="weather-detail-text" id="visibility"
+            >Visibility: 10 km</span
+          >
+        </div>
+        <div
+          class="visibility-message"
+          id="visibilityMessage"
+          style="
+            text-align: center;
+            font-weight: bold;
+            color: green;
+            margin-top: 5px;
+          "
+        >
+          Good visibility for Northern Lights!
+        </div>
+      </div>
+
+      
+      <div class="accordion">
         <div class="accordion">
-            <div class="accordion">
-                <h1>FAQs</h1>
-                <div class="accordion-item">
-                    <div class="accordion-header">What is the best time to visit Tromsø?</div>
-                    <div class="accordion-content">The best time is during the winter months for Northern Lights and summer for the Midnight Sun.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">How do I get to Tromsø?</div>
-                    <div class="accordion-content">Tromsø is accessible by flights from major cities in Norway and several international destinations.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">What activities can I do in Tromsø?</div>
-                    <div class="accordion-content">You can enjoy dog sledding, whale watching, hiking, and visiting the Polar Museum, among other activities.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Is Tromsø a good place to see the Northern Lights?</div>
-                    <div class="accordion-content">Yes, Tromsø is known as one of the best places in the world to see the Northern Lights, especially between September and April.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">What is the Midnight Sun?</div>
-                    <div class="accordion-content">The Midnight Sun occurs during summer months when the sun doesn't set, providing 24 hours of daylight.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Are there guided tours for Northern Lights viewing?</div>
-                    <div class="accordion-content">Yes, there are many guided tours available that take you to the best spots for Northern Lights viewing.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">What should I wear while visiting Tromsø?</div>
-                    <div class="accordion-content">Layered clothing, waterproof outer layers, and warm accessories like hats, gloves, and scarves are recommended.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Is it safe to walk around Tromsø at night?</div>
-                    <div class="accordion-content">Yes, Tromsø is generally safe to walk around at night, but it’s always wise to stay in well-lit areas.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">What is the currency used in Tromsø?</div>
-                    <div class="accordion-content">The currency used in Tromsø is the Norwegian Krone (NOK).</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Can I see whales in Tromsø?</div>
-                    <div class="accordion-content">Yes, Tromsø is a great place for whale watching, especially between November and January.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">Are there any local delicacies I should try?</div>
-                    <div class="accordion-content">You should try local dishes such as reindeer stew, fresh seafood, and cloudberries.</div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">What is the weather like in Tromsø?</div>
-                    <div class="accordion-content">Tromsø experiences cold winters and mild summers, with significant variations in daylight throughout the year.</div>
-                </div>
+          <h1>FAQs</h1>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              What is the best time to visit Tromsø?
             </div>
+            <div class="accordion-content">
+              The best time is during the winter months for Northern Lights and
+              summer for the Midnight Sun.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">How do I get to Tromsø?</div>
+            <div class="accordion-content">
+              Tromsø is accessible by flights from major cities in Norway and
+              several international destinations.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              What activities can I do in Tromsø?
+            </div>
+            <div class="accordion-content">
+              You can enjoy dog sledding, whale watching, hiking, and visiting
+              the Polar Museum, among other activities.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Is Tromsø a good place to see the Northern Lights?
+            </div>
+            <div class="accordion-content">
+              Yes, Tromsø is known as one of the best places in the world to see
+              the Northern Lights, especially between September and April.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">What is the Midnight Sun?</div>
+            <div class="accordion-content">
+              The Midnight Sun occurs during summer months when the sun doesn't
+              set, providing 24 hours of daylight.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Are there guided tours for Northern Lights viewing?
+            </div>
+            <div class="accordion-content">
+              Yes, there are many guided tours available that take you to the
+              best spots for Northern Lights viewing.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              What should I wear while visiting Tromsø?
+            </div>
+            <div class="accordion-content">
+              Layered clothing, waterproof outer layers, and warm accessories
+              like hats, gloves, and scarves are recommended.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Is it safe to walk around Tromsø at night?
+            </div>
+            <div class="accordion-content">
+              Yes, Tromsø is generally safe to walk around at night, but it’s
+              always wise to stay in well-lit areas.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              What is the currency used in Tromsø?
+            </div>
+            <div class="accordion-content">
+              The currency used in Tromsø is the Norwegian Krone (NOK).
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Can I see whales in Tromsø?</div>
+            <div class="accordion-content">
+              Yes, Tromsø is a great place for whale watching, especially
+              between November and January.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              Are there any local delicacies I should try?
+            </div>
+            <div class="accordion-content">
+              You should try local dishes such as reindeer stew, fresh seafood,
+              and cloudberries.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              What is the weather like in Tromsø?
+            </div>
+            <div class="accordion-content">
+              Tromsø experiences cold winters and mild summers, with significant
+              variations in daylight throughout the year.
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Dynamic Component 3: Best Viewing Locations -->
-        <div class="viewing-locations">
-            <h3>Best Viewing Locations for the Northern Lights</h3>
-            <div class="location-list">
-                <div class="location-item">
-                    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/10/2e/ba/cc.jpg" alt="Kvaløya">
-                    <h4>Kvaløya Island</h4>
-                </div>
-                <div class="location-item">
-                    <img src="https://img.freepik.com/premium-photo/view-bridge-city-tromso_522472-19326.jpg" alt="Tromsø Bridge">
-                    <h4>Tromsø Bridge</h4>
-                </div>
-                <div class="location-item">
-                    <img src="https://www.lyngenlodge.com/fileadmin/user_upload/Topptur_Ski_Touring_Lyngen_3.jpg" alt="Lyngen Alps">
-                    <h4>Lyngen Alps</h4>
-                </div>
-            </div>
+      
+      <div class="viewing-locations">
+        <h3>Best Viewing Locations for the Northern Lights</h3>
+        <div class="location-list">
+          <div class="location-item">
+            <img
+              src="https://media.tacdn.com/media/attractions-splice-spp-674x446/10/2e/ba/cc.jpg"
+              alt="Kvaløya"
+            />
+            <h4>Kvaløya Island</h4>
+          </div>
+          <div class="location-item">
+            <img
+              src="https://img.freepik.com/premium-photo/view-bridge-city-tromso_522472-19326.jpg"
+              alt="Tromsø Bridge"
+            />
+            <h4>Tromsø Bridge</h4>
+          </div>
+          <div class="location-item">
+            <img
+              src="https://www.lyngenlodge.com/fileadmin/user_upload/Topptur_Ski_Touring_Lyngen_3.jpg"
+              alt="Lyngen Alps"
+            />
+            <h4>Lyngen Alps</h4>
+          </div>
         </div>
+      </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Tours-Norway. All rights reserved.</p>
+      <p>&copy; 2024 Tours-Norway. All rights reserved.</p>
     </footer>
 
     <script>
-        async function fetchWeather() {
-    try {
-        // Fetch latitude and longitude for Tromsø
-        const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Tromsø&limit=1&appid=c7b6791f547725dea339243788acb1e5');
-        if (!geoResponse.ok) {
-            throw new Error('Network response was not ok: ' + geoResponse.statusText);
+      async function fetchWeather() {
+        try {
+          
+          const geoResponse = await fetch(
+            "http://api.openweathermap.org/geo/1.0/direct?q=Tromsø&limit=1&appid=c7b6791f547725dea339243788acb1e5"
+          );
+          if (!geoResponse.ok) {
+            throw new Error(
+              "Network response was not ok: " + geoResponse.statusText
+            );
+          }
+          const geoData = await geoResponse.json();
+          if (geoData.length === 0) {
+            throw new Error("No data found for the specified location.");
+          }
+
+          const { lat, lon } = geoData[0];
+
+          
+          const weatherResponse = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`
+          );
+          if (!weatherResponse.ok) {
+            throw new Error(
+              "Network response was not ok: " + weatherResponse.statusText
+            );
+          }
+          const weatherData = await weatherResponse.json();
+
+          
+          document.getElementById("temperature").textContent =
+            Math.round(weatherData.main.temp) + "°C";
+          document.getElementById("humidity").textContent =
+            weatherData.main.humidity + "% Humidity";
+          document.getElementById("wind").textContent =
+            Math.round(weatherData.wind.speed) + " km/h Wind";
+          document.getElementById("feelsLike").textContent =
+            "Feels like " + Math.round(weatherData.main.feels_like) + "°C";
+          document.getElementById("location").textContent =
+            weatherData.name + ", " + weatherData.sys.country;
+
+      
+          const visibility = weatherData.visibility / 1000; 
+          document.getElementById(
+            "visibility"
+          ).textContent = `Visibility: ${visibility} km`;
+
+          
+          const visibilityMessage =
+            visibility >= 10
+              ? "Good visibility for Northern Lights!"
+              : "Poor visibility may hinder your view.";
+          document.getElementById("visibilityMessage").textContent =
+            visibilityMessage;
+
+          
+          const weatherCondition = weatherData.weather[0].main;
+          const weatherIcons = {
+            Clear: "☀️",
+            Clouds: "☁️",
+            Rain: "🌧️",
+            Drizzle: "🌦️",
+            Thunderstorm: "⛈️",
+            Snow: "❄️",
+            Mist: "🌫️",
+          };
+          document.getElementById("weatherIcon").textContent =
+            weatherIcons[weatherCondition] || "🌤️";
+        } catch (error) {
+          console.error("Error fetching weather data:", error);
+          
+          document.getElementById("temperature").textContent =
+            "Error fetching data";
+          document.getElementById("humidity").textContent = "";
+          document.getElementById("wind").textContent = "";
+          document.getElementById("feelsLike").textContent = "";
+          document.getElementById("location").textContent = "";
+          document.getElementById("weatherIcon").textContent = "";
+          document.getElementById("visibility").textContent = "";
+          document.getElementById("visibilityMessage").textContent = "";
         }
-        const geoData = await geoResponse.json();
-        if (geoData.length === 0) {
-            throw new Error('No data found for the specified location.');
-        }
+      }
 
-        const { lat, lon } = geoData[0];
+      fetchWeather();
+      
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-        // Fetch weather data
-        const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
-        if (!weatherResponse.ok) {
-            throw new Error('Network response was not ok: ' + weatherResponse.statusText);
-        }
-        const weatherData = await weatherResponse.json();
-
-        // Update weather widget with data
-        document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
-        document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
-        document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
-        document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
-        document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
-
-        // Update visibility
-        const visibility = weatherData.visibility / 1000; // convert from meters to kilometers
-        document.getElementById('visibility').textContent = `Visibility: ${visibility} km`;
-
-        // Check visibility for Northern Lights
-        const visibilityMessage = visibility >= 10 ? "Good visibility for Northern Lights!" : "Poor visibility may hinder your view.";
-        document.getElementById('visibilityMessage').textContent = visibilityMessage;
-
-        // Weather icons based on conditions
-        const weatherCondition = weatherData.weather[0].main;
-        const weatherIcons = {
-            'Clear': '☀️',
-            'Clouds': '☁️',
-            'Rain': '🌧️',
-            'Drizzle': '🌦️',
-            'Thunderstorm': '⛈️',
-            'Snow': '❄️',
-            'Mist': '🌫️'
-        };
-        document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        // Handle error in the UI
-        document.getElementById('temperature').textContent = 'Error fetching data';
-        document.getElementById('humidity').textContent = '';
-        document.getElementById('wind').textContent = '';
-        document.getElementById('feelsLike').textContent = '';
-        document.getElementById('location').textContent = '';
-        document.getElementById('weatherIcon').textContent = '';
-        document.getElementById('visibility').textContent = '';
-        document.getElementById('visibilityMessage').textContent = '';
-    }
-}
-
-fetchWeather();
-// Acordin styling
-const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
         });
-    });
-
+      });
     </script>
-    
-</body>
+  </body>
 </html>

@@ -251,7 +251,7 @@
                 <div class="weather-location" id="location">Preikestolen, Norway</div>
             </div>
 
-            <!-- Dynamic Component 1: Adventure Activities -->
+            
             <div class="adventure-activities">
                 <h2>Thrilling Activities Around Preikestolen</h2>
                 <p>Preikestolen isn't just about the stunning views; it offers an array of thrilling activities that allow you to explore the beautiful Lysefjord and its surrounding nature. Here are some top activities to consider:</p>
@@ -276,7 +276,7 @@
             </div>
             
 
-            <!-- Dynamic Component 2: Hiking Information Section -->
+        
             <div class="hiking-info">
                 <h2>Hiking Tips</h2>
                 <p>Prepare adequately with water, snacks, and proper gear. The hike can take 4-5 hours round trip.</p>
@@ -292,7 +292,7 @@
     <script>
         async function fetchWeather() {
             try {
-                // Step 1: Fetch latitude and longitude for Oslo
+     
                 const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Stavanger&limit=1&appid=c7b6791f547725dea339243788acb1e5');
                 if (!geoResponse.ok) {
                     throw new Error('Network response was not ok: ' + geoResponse.statusText);
@@ -304,21 +304,21 @@
     
                 const { lat, lon } = geoData[0];
     
-                // Step 2: Fetch weather data using latitude and longitude
+               
                 const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
                 if (!weatherResponse.ok) {
                     throw new Error('Network response was not ok: ' + weatherResponse.statusText);
                 }
                 const weatherData = await weatherResponse.json();
     
-                // Update weather widget with data
+                
                 document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
                 document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
                 document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
                 document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
                 document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
     
-                // Weather icons based on weather conditions
+             
                 const weatherCondition = weatherData.weather[0].main;
                 const weatherIcons = {
                     'Clear': '☀️',
@@ -332,7 +332,7 @@
                 document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
             } catch (error) {
                 console.error('Error fetching weather data:', error);
-                // Update the UI to show an error message
+               
                 document.getElementById('temperature').textContent = 'Error fetching data';
                 document.getElementById('humidity').textContent = '';
                 document.getElementById('wind').textContent = '';

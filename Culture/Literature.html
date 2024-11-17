@@ -386,7 +386,7 @@
             observer.observe(section);
         });
 
-        // Norwegian author spotlight
+        // Author info
         function getAuthorSpotlight() {
             const authors = [
         { name: "Henrik Ibsen", work: "A Doll's House", info: "Pioneer of realistic drama" },
@@ -408,7 +408,7 @@
             `;
         }
 
-        // Norwegian art quiz
+        // Art quiz
 const quizQuestions = [
     {
         question: "Who painted 'The Scream'?",
@@ -450,9 +450,9 @@ function displayQuestion() {
 
     const answerButtons = document.querySelectorAll('#art-quiz button');
     answerButtons.forEach((button, index) => {
-        const answerKey = String.fromCharCode(65 + index); // 'A' + index (0, 1, 2)
+        const answerKey = String.fromCharCode(65 + index); 
         button.textContent = `${answerKey}: ${question.answers[answerKey]}`;
-        button.onclick = () => checkAnswer(answerKey); // Set up the click handler for each button
+        button.onclick = () => checkAnswer(answerKey); 
     });
 }
 
@@ -470,7 +470,7 @@ function checkAnswer(answer) {
     }, 2000);
 }
 
-// Initialize quiz
+
 displayQuestion();
 
     </script>

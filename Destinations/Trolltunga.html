@@ -1,396 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explore Trolltunga, Norway</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+      }
 
-        header {
-            background-color: #3a4d68;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            border-bottom: 5px solid #2c3844;
-        }
+      header {
+        background-color: #3a4d68;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-bottom: 5px solid #2c3844;
+      }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
 
-        .hero {
-            position: relative;
-            height: 60vh;
-            overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
+      .hero {
+        position: relative;
+        height: 60vh;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
 
-        .hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
 
-        .hero-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+      .hero-text h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
 
-        .hero-text p {
-            font-size: 1.2rem;
-        }
+      .hero-text p {
+        font-size: 1.2rem;
+      }
 
-        .image-gallery {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-        }
+      .image-gallery {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
 
-        .image-gallery img {
-            width: 32%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+      .image-gallery img {
+        width: 32%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
 
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
+      .image-gallery img:hover {
+        transform: scale(1.05);
+      }
 
-        .highlights {
-            background-color: #004d3d;
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-        }
+      .highlights {
+        background-color: #004d3d;
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
 
-        .highlights h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
+      .highlights h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
 
-        .highlights ul {
-            list-style-type: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+      .highlights ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
-        .highlights li {
-            background-color: #007a5e;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+      .highlights li {
+        background-color: #007a5e;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-        .highlights li:hover {
-            background-color: #009b73;
-        }
+      .highlights li:hover {
+        background-color: #009b73;
+      }
 
-        .weather-widget {
-            background: linear-gradient(135deg, #b2ebf2, #4dd0e1);
-            color: #333;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
+      .weather-widget {
+        background: linear-gradient(135deg, #b2ebf2, #4dd0e1);
+        color: #333;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
 
-        .weather-widget h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+      .weather-widget h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
 
-        .weather-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .weather-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .weather-main {
-            display: flex;
-            align-items: center;
-        }
+      .weather-main {
+        display: flex;
+        align-items: center;
+      }
 
-        .weather-icon {
-            font-size: 4rem;
-            margin-right: 1rem;
-        }
+      .weather-icon {
+        font-size: 4rem;
+        margin-right: 1rem;
+      }
 
-        .temperature {
-            font-size: 3rem;
-            font-weight: bold;
-        }
+      .temperature {
+        font-size: 3rem;
+        font-weight: bold;
+      }
 
-        .weather-details {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+      .weather-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
 
-        .weather-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
+      .weather-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
 
-        .weather-detail-icon {
-            font-size: 1.2rem;
-            margin-right: 0.5rem;
-        }
+      .weather-detail-icon {
+        font-size: 1.2rem;
+        margin-right: 0.5rem;
+      }
 
-        .weather-detail-text {
-            font-size: 1rem;
-        }
+      .weather-detail-text {
+        font-size: 1rem;
+      }
 
-        .weather-location {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: 300;
-        }
+      .weather-location {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
 
-        .hike-preparation {
-    background-color: #e6f7ff; /* Light blue background for vibrancy */
-    border: 2px solid #00a86b; /* Green border for emphasis */
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+      .hike-preparation {
+        background-color: #e6f7ff;
+        border: 2px solid #00a86b;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-.hike-preparation h2 {
-    color: #007acc; /* Darker blue for the heading */
-}
+      .hike-preparation h2 {
+        color: #007acc;
+      }
 
-.hike-preparation ul {
-    list-style-type: disc; /* Bullet points for the list */
-    margin-left: 20px; /* Indent the list */
-}
+      .hike-preparation ul {
+        list-style-type: disc;
+        margin-left: 20px;
+      }
 
-.hike-preparation li {
-    margin-bottom: 10px; /* Space between list items */
-    font-weight: 600; /* Bold list items */
-}
+      .hike-preparation li {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
 
-.hike-preparation p {
-    margin-top: 10px; /* Space above the paragraph */
-}
+      .hike-preparation p {
+        margin-top: 10px;
+      }
 
-.adventure-activities {
-    color: #3c8dbc; /* A vibrant blue color for text */
-    font-weight: 600; /* Make the text bold */
-    margin-bottom: 1.5rem; /* Space out from the next element */
-}
+      .adventure-activities {
+        color: #3c8dbc;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
 
-.adventure-activities ul {
-    margin-top: 1rem; /* Add space above the list */
-    padding-left: 20px; /* Indent the list */
-    list-style-type: disc; /* Use disc bullets for the list */
-}
+      .adventure-activities ul {
+        margin-top: 1rem;
+        padding-left: 20px;
+        list-style-type: disc;
+      }
 
-.adventure-activities li {
-    margin-bottom: 0.5rem; /* Space between list items */
-}
+      .adventure-activities li {
+        margin-bottom: 0.5rem;
+      }
 
-
-        footer {
-            background-color: #3a4d68;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
+      footer {
+        background-color: #3a4d68;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Explore Trolltunga, Norway</h1>
-        <p>Experience the Majestic Rock Tongue</p>
+      <h1>Explore Trolltunga, Norway</h1>
+      <p>Experience the Majestic Rock Tongue</p>
     </header>
 
     <main>
-        <div class="container">
-            <div class="hero">
-                <img src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://media.newmindmedia.com/TellUs/image/%3Ffile%3D332A28D14F62AB33E8964C05C5D0EE65F4D2AC65.jpg&dh%3D389&dw%3D800&t%3D4" alt="Trolltunga view">
-                <div class="hero-text">
-                    <h2>Welcome to Trolltunga</h2>
-                    <p>A Must-See Natural Wonder</p>
-                </div>
-            </div>
-
-            <h3>Image Gallery</h3>
-            <br>
-            <div class="image-gallery">
-                <img src="https://trolltunga.com/wp-content/uploads/2019/12/2573-Algirdas-Zabitis-Trolltunga-Active.jpg" alt="Trolltunga hiking">
-                <img src="https://www.travel-monkey.com/wp-content/uploads/2015/03/Trolltunga-Hike-Guide-Cliff-view.jpg" alt="Trolltunga with fjord">
-                <img src="https://fearlessadventures.blog/wp-content/uploads/2022/09/8dcbcea3-edd8-4b72-96a2-cfff8768c98d.jpg?w=1024" alt="Trolltunga sunset">
-            </div>
-
-            <div class="highlights">
-                <h3>Top Highlights</h3>
-                <ul>
-                    <li>Iconic Rock Formation</li>
-                    <li>Scenic Hiking Trails</li>
-                    <li>Best Time to Visit: June to September</li>
-                    <li>Guided Tours and Rentals</li>
-                    <li>Nearby Attractions: Ringedalsvatnet Lake</li>
-                </ul>
-            </div>
-
-            <div class="weather-widget">
-                <h3>Current Weather</h3>
-                <div class="weather-info">
-                    <div class="weather-main">
-                        <div class="weather-icon" id="weatherIcon">🌤️</div>
-                        <div class="temperature" id="temperature">8°C</div>
-                    </div>
-                    <div class="weather-details">
-                        <div class="weather-detail">
-                            <span class="weather-detail-icon">💧</span>
-                            <span class="weather-detail-text" id="humidity">65% Humidity</span>
-                        </div>
-                        <div class="weather-detail">
-                            <span class="weather-detail-icon">💨</span>
-                            <span class="weather-detail-text" id="wind">7 km/h Wind</span>
-                        </div>
-                        <div class="weather-detail">
-                            <span class="weather-detail-icon">🌡️</span>
-                            <span class="weather-detail-text" id="feelsLike">Feels like 6°C</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="weather-location" id="location">Trolltunga, Norway</div>
-            </div>
-
-            <!-- Dynamic Component 1: Adventure Activities -->
-            <div class="adventure-activities">
-                <h2 class="adventure-activities">Thrilling Adventure Activities Await!</h2>
-<p class="adventure-activities">Unleash your adventurous spirit with a range of exhilarating activities! Whether you're gliding through the stunning fjords on a kayak or scaling majestic cliffs with expert-guided climbing expeditions, there's something for every thrill-seeker. Dive into the heart of nature and create unforgettable memories:</p>
-<ul class="adventure-activities">
-    <li><strong>Kayaking on the Fjords:</strong> Experience the breathtaking beauty of the fjords from a unique perspective. Paddle alongside towering cliffs and crystal-clear waters, surrounded by awe-inspiring landscapes.</li>
-    <li><strong>Guided Climbing Expeditions:</strong> Challenge yourself with guided climbs that cater to all skill levels. Learn from experienced instructors and conquer iconic rock formations that will leave you breathless.</li>
-    <li><strong>Hiking and Trekking:</strong> Explore the rugged trails that lead to stunning viewpoints. Each hike offers a chance to connect with nature and discover hidden gems.</li>
-    <li><strong>Wildlife Watching:</strong> Keep your eyes peeled for native wildlife as you navigate the stunning landscapes. From soaring eagles to playful seals, the beauty of nature is all around you!</li>
-</ul>
-
-
-                <img src="https://media.newmindmedia.com/TellUs/image/?file=IMG_0785_724236389.JPG&dh=533&dw=800&t=4" alt="Kayaking in fjord" style="width:100%; border-radius: 10px;">
-            </div>
-
-            <!-- Dynamic Component 2: Hiking Information Section -->
-            <div class="hiking-info">
-                <div class="hike-preparation">
-                    <h2>Prepare for Your Trolltunga Hike!</h2>
-                    <p>Embarking on the Trolltunga hike is an adventure of a lifetime! Here’s how to make the most of your journey:</p>
-                    <ul>
-                        <li><strong>Hydration is Key:</strong> Bring at least 2-3 liters of water per person. Staying hydrated is crucial for stamina!</li>
-                        <li><strong>Pack Snacks:</strong> Fuel your hike with high-energy snacks like nuts, energy bars, and fruits. Aim for a variety of options to keep your energy levels up.</li>
-                        <li><strong>Dress for Success:</strong> Wear moisture-wicking layers and sturdy hiking boots. Don't forget a waterproof jacket, as the weather can change quickly!</li>
-                        <li><strong>Time Management:</strong> The hike can take 10-12 hours round trip, so plan to start early in the morning to enjoy the scenery and avoid hiking in the dark.</li>
-                        <li><strong>Safety First:</strong> Always hike with a buddy and let someone know your itinerary. Consider carrying a first aid kit and a map of the area.</li>
-                    </ul>
-                    <p>With the right preparation, you're set for an unforgettable experience at Trolltunga. Happy hiking!</p>
-                </div>
-                
-                <img src="https://trolltunga.com/wp-content/uploads/2023/06/Kart-Trolltunga-WEB-juni-2023-1-tiny.png" alt="Hiking path at Trolltunga" style="width:100%; border-radius: 10px;">
-            </div>
+      <div class="container">
+        <div class="hero">
+          <img
+            src="https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://media.newmindmedia.com/TellUs/image/%3Ffile%3D332A28D14F62AB33E8964C05C5D0EE65F4D2AC65.jpg&dh%3D389&dw%3D800&t%3D4"
+            alt="Trolltunga view"
+          />
+          <div class="hero-text">
+            <h2>Welcome to Trolltunga</h2>
+            <p>A Must-See Natural Wonder</p>
+          </div>
         </div>
+
+        <h3>Image Gallery</h3>
+        <br />
+        <div class="image-gallery">
+          <img
+            src="https://trolltunga.com/wp-content/uploads/2019/12/2573-Algirdas-Zabitis-Trolltunga-Active.jpg"
+            alt="Trolltunga hiking"
+          />
+          <img
+            src="https://www.travel-monkey.com/wp-content/uploads/2015/03/Trolltunga-Hike-Guide-Cliff-view.jpg"
+            alt="Trolltunga with fjord"
+          />
+          <img
+            src="https://fearlessadventures.blog/wp-content/uploads/2022/09/8dcbcea3-edd8-4b72-96a2-cfff8768c98d.jpg?w=1024"
+            alt="Trolltunga sunset"
+          />
+        </div>
+
+        <div class="highlights">
+          <h3>Top Highlights</h3>
+          <ul>
+            <li>Iconic Rock Formation</li>
+            <li>Scenic Hiking Trails</li>
+            <li>Best Time to Visit: June to September</li>
+            <li>Guided Tours and Rentals</li>
+            <li>Nearby Attractions: Ringedalsvatnet Lake</li>
+          </ul>
+        </div>
+
+        <div class="weather-widget">
+          <h3>Current Weather</h3>
+          <div class="weather-info">
+            <div class="weather-main">
+              <div class="weather-icon" id="weatherIcon">🌤️</div>
+              <div class="temperature" id="temperature">8°C</div>
+            </div>
+            <div class="weather-details">
+              <div class="weather-detail">
+                <span class="weather-detail-icon">💧</span>
+                <span class="weather-detail-text" id="humidity"
+                  >65% Humidity</span
+                >
+              </div>
+              <div class="weather-detail">
+                <span class="weather-detail-icon">💨</span>
+                <span class="weather-detail-text" id="wind">7 km/h Wind</span>
+              </div>
+              <div class="weather-detail">
+                <span class="weather-detail-icon">🌡️</span>
+                <span class="weather-detail-text" id="feelsLike"
+                  >Feels like 6°C</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="weather-location" id="location">Trolltunga, Norway</div>
+        </div>
+
+       
+        <div class="adventure-activities">
+          <h2 class="adventure-activities">
+            Thrilling Adventure Activities Await!
+          </h2>
+          <p class="adventure-activities">
+            Unleash your adventurous spirit with a range of exhilarating
+            activities! Whether you're gliding through the stunning fjords on a
+            kayak or scaling majestic cliffs with expert-guided climbing
+            expeditions, there's something for every thrill-seeker. Dive into
+            the heart of nature and create unforgettable memories:
+          </p>
+          <ul class="adventure-activities">
+            <li>
+              <strong>Kayaking on the Fjords:</strong> Experience the
+              breathtaking beauty of the fjords from a unique perspective.
+              Paddle alongside towering cliffs and crystal-clear waters,
+              surrounded by awe-inspiring landscapes.
+            </li>
+            <li>
+              <strong>Guided Climbing Expeditions:</strong> Challenge yourself
+              with guided climbs that cater to all skill levels. Learn from
+              experienced instructors and conquer iconic rock formations that
+              will leave you breathless.
+            </li>
+            <li>
+              <strong>Hiking and Trekking:</strong> Explore the rugged trails
+              that lead to stunning viewpoints. Each hike offers a chance to
+              connect with nature and discover hidden gems.
+            </li>
+            <li>
+              <strong>Wildlife Watching:</strong> Keep your eyes peeled for
+              native wildlife as you navigate the stunning landscapes. From
+              soaring eagles to playful seals, the beauty of nature is all
+              around you!
+            </li>
+          </ul>
+
+          <img
+            src="https://media.newmindmedia.com/TellUs/image/?file=IMG_0785_724236389.JPG&dh=533&dw=800&t=4"
+            alt="Kayaking in fjord"
+            style="width: 100%; border-radius: 10px"
+          />
+        </div>
+
+        
+        <div class="hiking-info">
+          <div class="hike-preparation">
+            <h2>Prepare for Your Trolltunga Hike!</h2>
+            <p>
+              Embarking on the Trolltunga hike is an adventure of a lifetime!
+              Here’s how to make the most of your journey:
+            </p>
+            <ul>
+              <li>
+                <strong>Hydration is Key:</strong> Bring at least 2-3 liters of
+                water per person. Staying hydrated is crucial for stamina!
+              </li>
+              <li>
+                <strong>Pack Snacks:</strong> Fuel your hike with high-energy
+                snacks like nuts, energy bars, and fruits. Aim for a variety of
+                options to keep your energy levels up.
+              </li>
+              <li>
+                <strong>Dress for Success:</strong> Wear moisture-wicking layers
+                and sturdy hiking boots. Don't forget a waterproof jacket, as
+                the weather can change quickly!
+              </li>
+              <li>
+                <strong>Time Management:</strong> The hike can take 10-12 hours
+                round trip, so plan to start early in the morning to enjoy the
+                scenery and avoid hiking in the dark.
+              </li>
+              <li>
+                <strong>Safety First:</strong> Always hike with a buddy and let
+                someone know your itinerary. Consider carrying a first aid kit
+                and a map of the area.
+              </li>
+            </ul>
+            <p>
+              With the right preparation, you're set for an unforgettable
+              experience at Trolltunga. Happy hiking!
+            </p>
+          </div>
+
+          <img
+            src="https://trolltunga.com/wp-content/uploads/2023/06/Kart-Trolltunga-WEB-juni-2023-1-tiny.png"
+            alt="Hiking path at Trolltunga"
+            style="width: 100%; border-radius: 10px"
+          />
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Explore Trolltunga. All rights reserved.</p>
+      <p>&copy; 2024 Explore Trolltunga. All rights reserved.</p>
     </footer>
 
     <script>
-        async function fetchWeather() {
-            try {
-                // Step 1: Fetch latitude and longitude for Oslo
-                const geoResponse = await fetch('http://api.openweathermap.org/geo/1.0/direct?q=Odda,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5');
-                if (!geoResponse.ok) {
-                    throw new Error('Network response was not ok: ' + geoResponse.statusText);
-                }
-                const geoData = await geoResponse.json();
-                if (geoData.length === 0) {
-                    throw new Error('No data found for the specified location.');
-                }
-    
-                const { lat, lon } = geoData[0];
-    
-                // Step 2: Fetch weather data using latitude and longitude
-                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`);
-                if (!weatherResponse.ok) {
-                    throw new Error('Network response was not ok: ' + weatherResponse.statusText);
-                }
-                const weatherData = await weatherResponse.json();
-    
-                // Update weather widget with data
-                document.getElementById('temperature').textContent = Math.round(weatherData.main.temp) + '°C';
-                document.getElementById('humidity').textContent = weatherData.main.humidity + '% Humidity';
-                document.getElementById('wind').textContent = Math.round(weatherData.wind.speed) + ' km/h Wind';
-                document.getElementById('feelsLike').textContent = 'Feels like ' + Math.round(weatherData.main.feels_like) + '°C';
-                document.getElementById('location').textContent = weatherData.name + ', ' + weatherData.sys.country;
-    
-                // Weather icons based on weather conditions
-                const weatherCondition = weatherData.weather[0].main;
-                const weatherIcons = {
-                    'Clear': '☀️',
-                    'Clouds': '☁️',
-                    'Rain': '🌧️',
-                    'Drizzle': '🌦️',
-                    'Thunderstorm': '⛈️',
-                    'Snow': '❄️',
-                    'Mist': '🌫️'
-                };
-                document.getElementById('weatherIcon').textContent = weatherIcons[weatherCondition] || '🌤️';
-            } catch (error) {
-                console.error('Error fetching weather data:', error);
-                // Update the UI to show an error message
-                document.getElementById('temperature').textContent = 'Error fetching data';
-                document.getElementById('humidity').textContent = '';
-                document.getElementById('wind').textContent = '';
-                document.getElementById('feelsLike').textContent = '';
-                document.getElementById('location').textContent = '';
-                document.getElementById('weatherIcon').textContent = '';
-            }
-        }
-    
-        fetchWeather();
-    </script>
+      async function fetchWeather() {
+        try {
+          
+          const geoResponse = await fetch(
+            "http://api.openweathermap.org/geo/1.0/direct?q=Odda,NO&limit=1&appid=c7b6791f547725dea339243788acb1e5"
+          );
+          if (!geoResponse.ok) {
+            throw new Error(
+              "Network response was not ok: " + geoResponse.statusText
+            );
+          }
+          const geoData = await geoResponse.json();
+          if (geoData.length === 0) {
+            throw new Error("No data found for the specified location.");
+          }
 
-</body>
+          const { lat, lon } = geoData[0];
+
+          
+          const weatherResponse = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=c7b6791f547725dea339243788acb1e5`
+          );
+          if (!weatherResponse.ok) {
+            throw new Error(
+              "Network response was not ok: " + weatherResponse.statusText
+            );
+          }
+          const weatherData = await weatherResponse.json();
+
+         
+          document.getElementById("temperature").textContent =
+            Math.round(weatherData.main.temp) + "°C";
+          document.getElementById("humidity").textContent =
+            weatherData.main.humidity + "% Humidity";
+          document.getElementById("wind").textContent =
+            Math.round(weatherData.wind.speed) + " km/h Wind";
+          document.getElementById("feelsLike").textContent =
+            "Feels like " + Math.round(weatherData.main.feels_like) + "°C";
+          document.getElementById("location").textContent =
+            weatherData.name + ", " + weatherData.sys.country;
+
+         
+          const weatherCondition = weatherData.weather[0].main;
+          const weatherIcons = {
+            Clear: "☀️",
+            Clouds: "☁️",
+            Rain: "🌧️",
+            Drizzle: "🌦️",
+            Thunderstorm: "⛈️",
+            Snow: "❄️",
+            Mist: "🌫️",
+          };
+          document.getElementById("weatherIcon").textContent =
+            weatherIcons[weatherCondition] || "🌤️";
+        } catch (error) {
+          console.error("Error fetching weather data:", error);
+         
+          document.getElementById("temperature").textContent =
+            "Error fetching data";
+          document.getElementById("humidity").textContent = "";
+          document.getElementById("wind").textContent = "";
+          document.getElementById("feelsLike").textContent = "";
+          document.getElementById("location").textContent = "";
+          document.getElementById("weatherIcon").textContent = "";
+        }
+      }
+
+      fetchWeather();
+    </script>
+  </body>
 </html>
